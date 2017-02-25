@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A4C5CBE-D105-4987-90A1-EAEE7D291039}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>SistemaVentas</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsCargo.cs" />
+    <Compile Include="clsCliente.cs" />
+    <Compile Include="clsEmpleado.cs" />
+    <Compile Include="clsMedida.cs" />
+    <Compile Include="clsProducto.cs" />
+    <Compile Include="clsProveedor.cs" />
+    <Compile Include="RegistroEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroEmpleado.Designer.cs">
+      <DependentUpon>RegistroEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroProducto.Designer.cs">
+      <DependentUpon>RegistroProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta.Designer.cs">
+      <DependentUpon>Venta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroCargo.Designer.cs">
+      <DependentUpon>RegistroCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroCliente.Designer.cs">
+      <DependentUpon>RegistroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroMedida.Designer.cs">
+      <DependentUpon>RegistroMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroProveedor.Designer.cs">
+      <DependentUpon>RegistroProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaCargos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaCargos.Designer.cs">
+      <DependentUpon>VentanaCargos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaCliente.Designer.cs">
+      <DependentUpon>VentanaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaCompras.Designer.cs">
+      <DependentUpon>VentanaCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaEmpleado.Designer.cs">
+      <DependentUpon>VentanaEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaPrincipal.Designer.cs">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaProductos.Designer.cs">
+      <DependentUpon>VentanaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaProveedor.Designer.cs">
+      <DependentUpon>VentanaProveedor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RegistroEmpleado.resx">
+      <DependentUpon>RegistroEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroProducto.resx">
+      <DependentUpon>RegistroProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta.resx">
+      <DependentUpon>Venta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RegistroCargo.resx">
+      <DependentUpon>RegistroCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroCliente.resx">
+      <DependentUpon>RegistroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroMedida.resx">
+      <DependentUpon>RegistroMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroProveedor.resx">
+      <DependentUpon>RegistroProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaCargos.resx">
+      <DependentUpon>VentanaCargos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaCliente.resx">
+      <DependentUpon>VentanaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaCompras.resx">
+      <DependentUpon>VentanaCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaEmpleado.resx">
+      <DependentUpon>VentanaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaPrincipal.resx">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaProductos.resx">
+      <DependentUpon>VentanaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaProveedor.resx">
+      <DependentUpon>VentanaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

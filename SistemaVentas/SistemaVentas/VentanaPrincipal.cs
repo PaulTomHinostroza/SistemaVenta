@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication1
+{
+    public partial class VentanaPrincipal : Form
+    {
+        public VentanaPrincipal()
+        {
+            InitializeComponent();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            Pedido x;
+            x = new Pedido();
+            x.ShowDialog();
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            VentanaEmpleado x;
+            x = new VentanaEmpleado();
+            x.ShowDialog();
+        }
+
+        private void btnCargos_Click(object sender, EventArgs e)
+        {
+            VentanaCargos x;
+            x = new VentanaCargos();
+            x.ShowDialog();
+        }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            VentanaCompras x;
+            x = new VentanaCompras();
+            x.ShowDialog();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            VentanaProductos x;
+            x = new VentanaProductos();
+            x.ShowDialog();
+        }
+
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+            VentanaProveedor x;
+            x = new VentanaProveedor();
+            x.ShowDialog();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            VentanaCliente x;
+            x = new VentanaCliente();
+            x.ShowDialog();
+        }
+    }
+}
