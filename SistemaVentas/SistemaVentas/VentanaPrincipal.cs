@@ -43,13 +43,6 @@ namespace WindowsFormsApplication1
             x.ShowDialog();
         }
 
-        private void btnCompras_Click(object sender, EventArgs e)
-        {
-            VentanaCompras x;
-            x = new VentanaCompras();
-            x.ShowDialog();
-        }
-
         private void btnProductos_Click(object sender, EventArgs e)
         {
             VentanaProductos x;
@@ -69,6 +62,14 @@ namespace WindowsFormsApplication1
             VentanaCliente x;
             x = new VentanaCliente();
             x.ShowDialog();
+        }
+
+        private void btnAlmacen_Click(object sender, EventArgs e)
+        {
+            VentanaAlmacen x;
+            x = new VentanaAlmacen();
+            x.ShowDialog();
+
         }
     }
 }

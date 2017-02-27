@@ -31,13 +31,13 @@
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
-            this.btnCompras = new System.Windows.Forms.Button();
-            this.btnStock = new System.Windows.Forms.Button();
+            this.btnAlmacen = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCargos = new System.Windows.Forms.Button();
             this.btnProveedor = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
+            this.btnStock = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnVentas
@@ -70,28 +70,19 @@
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
-            // btnCompras
+            // btnAlmacen
             // 
-            this.btnCompras.Location = new System.Drawing.Point(453, 95);
-            this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Size = new System.Drawing.Size(139, 68);
-            this.btnCompras.TabIndex = 3;
-            this.btnCompras.Text = "Compras";
-            this.btnCompras.UseVisualStyleBackColor = true;
-            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
-            // 
-            // btnStock
-            // 
-            this.btnStock.Location = new System.Drawing.Point(248, 94);
-            this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(139, 68);
-            this.btnStock.TabIndex = 4;
-            this.btnStock.Text = "Imprimir Stock";
-            this.btnStock.UseVisualStyleBackColor = true;
+            this.btnAlmacen.Location = new System.Drawing.Point(453, 95);
+            this.btnAlmacen.Name = "btnAlmacen";
+            this.btnAlmacen.Size = new System.Drawing.Size(139, 68);
+            this.btnAlmacen.TabIndex = 3;
+            this.btnAlmacen.Text = "Almacen";
+            this.btnAlmacen.UseVisualStyleBackColor = true;
+            this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(478, 374);
+            this.btnSalir.Location = new System.Drawing.Point(500, 351);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(92, 41);
             this.btnSalir.TabIndex = 5;
@@ -105,9 +96,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(216, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 25);
+            this.label1.Size = new System.Drawing.Size(169, 25);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Ventana Principal";
+            this.label1.Text = "Menu Principal";
             // 
             // btnCargos
             // 
@@ -139,18 +130,27 @@
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
+            // btnStock
+            // 
+            this.btnStock.Location = new System.Drawing.Point(248, 94);
+            this.btnStock.Name = "btnStock";
+            this.btnStock.Size = new System.Drawing.Size(139, 68);
+            this.btnStock.TabIndex = 4;
+            this.btnStock.Text = "Imprimir Stock";
+            this.btnStock.UseVisualStyleBackColor = true;
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 440);
+            this.ClientSize = new System.Drawing.Size(613, 423);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnProveedor);
             this.Controls.Add(this.btnCargos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnStock);
-            this.Controls.Add(this.btnCompras);
+            this.Controls.Add(this.btnAlmacen);
             this.Controls.Add(this.btnProductos);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnVentas);
@@ -167,12 +167,12 @@
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnProductos;
-        private System.Windows.Forms.Button btnCompras;
-        private System.Windows.Forms.Button btnStock;
+        private System.Windows.Forms.Button btnAlmacen;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCargos;
         private System.Windows.Forms.Button btnProveedor;
         private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Button btnStock;
     }
 }

@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class VentanaCompras : Form
+    public partial class VentanaAlmacen : Form
     {
-        public VentanaCompras()
+        public VentanaAlmacen()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RegistroAlmacen x;
+            x = new RegistroAlmacen();
+            x.ShowDialog();
         }
     }
 }
