@@ -44,12 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsAlmacen.cs" />
     <Compile Include="clsCargo.cs" />
     <Compile Include="clsCliente.cs" />
     <Compile Include="clsEmpleado.cs" />
     <Compile Include="clsMedida.cs" />
     <Compile Include="clsProducto.cs" />
     <Compile Include="clsProveedor.cs" />
+    <Compile Include="RegistroAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroAlmacen.Designer.cs">
+      <DependentUpon>RegistroAlmacen.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +143,9 @@
     <Compile Include="VentanaProveedor.Designer.cs">
       <DependentUpon>VentanaProveedor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegistroAlmacen.resx">
+      <DependentUpon>RegistroAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistroEmpleado.resx">
       <DependentUpon>RegistroEmpleado.cs</DependentUpon>
     </EmbeddedResource>
