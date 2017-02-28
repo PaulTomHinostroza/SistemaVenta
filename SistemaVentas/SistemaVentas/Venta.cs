@@ -12,9 +12,21 @@ namespace WindowsFormsApplication1
 {
     public partial class Pedido : Form
     {
+
         public Pedido()
         {
             InitializeComponent();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            ListarProductoVenta x;
+            x = new ListarProductoVenta();
+            x.ShowDialog();
+        }
+
+        private void Pedido_Load(object sender, EventArgs e)
+        {
         }
     }
 }

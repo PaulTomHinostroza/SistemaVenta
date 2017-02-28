@@ -36,7 +36,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,8 +44,8 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.txtProducto = new System.Windows.Forms.TextBox();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtMedida = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             this.btnQuitar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,7 +99,7 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.txtDireccion);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.txtNombres);
+            this.groupBox3.Controls.Add(this.txtNombre);
             this.groupBox3.Location = new System.Drawing.Point(29, 65);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(465, 104);
@@ -132,12 +132,12 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Nombre";
             // 
-            // txtNombres
+            // txtNombre
             // 
-            this.txtNombres.Location = new System.Drawing.Point(72, 26);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(387, 20);
-            this.txtNombres.TabIndex = 0;
+            this.txtNombre.Location = new System.Drawing.Point(72, 26);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(387, 20);
+            this.txtNombre.TabIndex = 0;
             // 
             // listView1
             // 
@@ -191,19 +191,20 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Producto";
             // 
-            // textBox1
+            // txtProducto
             // 
-            this.textBox1.Location = new System.Drawing.Point(101, 188);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(361, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtProducto.Location = new System.Drawing.Point(101, 188);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.Size = new System.Drawing.Size(361, 20);
+            this.txtProducto.TabIndex = 10;
+            this.txtProducto.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // numericUpDown1
+            // nudCantidad
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(101, 224);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(99, 20);
-            this.numericUpDown1.TabIndex = 11;
+            this.nudCantidad.Location = new System.Drawing.Point(101, 224);
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(99, 20);
+            this.nudCantidad.TabIndex = 11;
             // 
             // label6
             // 
@@ -268,8 +269,8 @@
             this.Controls.Add(this.txtMedida);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nudCantidad);
+            this.Controls.Add(this.txtProducto);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.listView1);
@@ -279,11 +280,12 @@
             this.Name = "Pedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venta";
+            this.Load += new System.EventHandler(this.Pedido_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,7 +298,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtNombres;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDireccion;
@@ -307,8 +309,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox txtProducto;
+        private System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtMedida;
