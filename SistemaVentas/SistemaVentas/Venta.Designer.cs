@@ -279,7 +279,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Pedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Venta";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Pedido_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
