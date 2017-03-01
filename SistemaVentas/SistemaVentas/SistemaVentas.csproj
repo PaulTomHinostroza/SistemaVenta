@@ -96,6 +96,12 @@
     <Compile Include="RegistroProducto.Designer.cs">
       <DependentUpon>RegistroProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroStock.Designer.cs">
+      <DependentUpon>RegistroStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Venta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroProducto.resx">
       <DependentUpon>RegistroProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroStock.resx">
+      <DependentUpon>RegistroStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
