@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             clsProveedor NuevoProveedor;
-            NuevoProveedor = new clsProveedor(txtNombres.Text, txtDireccion.Text, txtTelefono.Text, txtRUC.Text);
+            NuevoProveedor = new clsProveedor(txtNombres.Text, txtDireccion.Text, txtTelefono.Text);
             NuevoProveedor.EmailProv = txtEmail.Text;
             NuevoProveedor.InsertarProveedor();
             MessageBox.Show("Proveedor Registrado");

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtRUC = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -46,29 +44,11 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(122, 281);
+            this.txtEmail.Location = new System.Drawing.Point(122, 222);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(243, 20);
             this.txtEmail.TabIndex = 68;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(38, 186);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(30, 13);
-            this.label12.TabIndex = 67;
-            this.label12.Text = "RUC";
-            // 
-            // txtRUC
-            // 
-            this.txtRUC.Location = new System.Drawing.Point(122, 183);
-            this.txtRUC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtRUC.Name = "txtRUC";
-            this.txtRUC.Size = new System.Drawing.Size(125, 20);
-            this.txtRUC.TabIndex = 66;
             // 
             // label8
             // 
@@ -83,7 +63,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(38, 284);
+            this.label9.Location = new System.Drawing.Point(38, 225);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(32, 13);
@@ -93,7 +73,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(38, 234);
+            this.label11.Location = new System.Drawing.Point(38, 175);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(49, 13);
@@ -120,7 +100,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(122, 231);
+            this.txtTelefono.Location = new System.Drawing.Point(122, 172);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(151, 20);
@@ -146,7 +126,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(178, 341);
+            this.btnNuevo.Location = new System.Drawing.Point(178, 282);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 72;
@@ -155,7 +135,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(269, 341);
+            this.btnCancelar.Location = new System.Drawing.Point(269, 282);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 71;
@@ -165,7 +145,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(82, 341);
+            this.btnGuardar.Location = new System.Drawing.Point(82, 282);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 70;
@@ -177,14 +157,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 398);
+            this.ClientSize = new System.Drawing.Size(410, 329);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtRUC);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label11);
@@ -203,8 +181,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtRUC;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
