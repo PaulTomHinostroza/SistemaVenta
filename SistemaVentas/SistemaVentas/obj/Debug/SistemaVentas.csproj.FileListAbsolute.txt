@@ -62,7 +62,6 @@ C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\
 C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.RegistroCliente.resources
 C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.RegistroMedida.resources
 C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.RegistroProveedor.resources
-C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.VentanaAlmacen.resources
 C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.VentanaCargos.resources
 C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.VentanaCliente.resources
 C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.VentanaEmpleado.resources
@@ -70,3 +69,4 @@ C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\
 C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.VentanaProductos.resources
 C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.VentanaProveedor.resources
 C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.csproj.GenerateResource.Cache
+C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.VentanaAlmacen.resources

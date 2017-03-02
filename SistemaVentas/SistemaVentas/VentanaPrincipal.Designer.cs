@@ -209,11 +209,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(455, 72);
+            this.label2.Location = new System.Drawing.Point(453, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
+            this.label2.Size = new System.Drawing.Size(75, 20);
             this.label2.TabIndex = 35;
-            this.label2.Text = "Almacen";
+            this.label2.Text = " Almacen";
             // 
             // pictureBox2
             // 

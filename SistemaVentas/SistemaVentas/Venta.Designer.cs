@@ -175,9 +175,9 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(513, 188);
+            this.btnAgregar.Location = new System.Drawing.Point(513, 183);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(95, 43);
+            this.btnAgregar.Size = new System.Drawing.Size(95, 28);
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -251,9 +251,9 @@
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(622, 188);
+            this.btnQuitar.Location = new System.Drawing.Point(622, 183);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(95, 43);
+            this.btnQuitar.Size = new System.Drawing.Size(95, 28);
             this.btnQuitar.TabIndex = 17;
             this.btnQuitar.Text = "Quitar";
             this.btnQuitar.UseVisualStyleBackColor = true;
