@@ -25,7 +25,6 @@ namespace WindowsFormsApplication1
                 Close();
             }
         }
-
         private void btnVentas_Click(object sender, EventArgs e)
         {
            
