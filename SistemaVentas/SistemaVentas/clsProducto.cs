@@ -38,19 +38,55 @@ namespace WindowsFormsApplication1
         public string NombreProd
         {
             get { return _NombreProd; }
-            set { _NombreProd = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El nombre del Producto no debe quedar vacío.");
+                }
+                else if (value.Length > 30)
+                {
+                    throw new Exception("El nombre del Producto no puede exceder mas de  30 caracteres");
+                }
+                else
+                {
+                    _NombreProd = value.ToUpper();
+                }
+            }
         }
 
         public string MarcaProd
         {
             get { return _MarcaProd; }
-            set { _MarcaProd = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("La marca del producto no debe quedar vacio.");
+                }
+                else if (value.Length > 20)
+                {
+                    throw new Exception("La marca del producto no debe exceder mas de 20 caracteres");
+                }
+                else
+                {
+                    _MarcaProd = value.ToUpper();
+                }
+            }
         }
 
         public string DescripcionProd
         {
             get { return _DescripcionProd; }
-            set { _DescripcionProd = value; }
+            set { 
+                  if (value.Length > 25)
+                  {
+                     throw new Exception("La descripccion del producto no debe exceder mas de 25 caracteres");
+                  }
+                   else
+                  {
+                     _DescripcionProd = value.ToUpper();
+                  }}
         }
 
         public void InsertarProducto()

@@ -19,14 +19,16 @@ namespace WindowsFormsApplication1
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("Seguro que desea salir", "VentanaPrincipal", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+               == DialogResult.Yes)
+            {
+                Close();
+            }
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            Pedido x;
-            x = new Pedido();
-            x.ShowDialog();
+           
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
@@ -56,9 +58,7 @@ namespace WindowsFormsApplication1
 
         private void btnAlmacen_Click(object sender, EventArgs e)
         {
-            VentanaAlmacen x;
-            x = new VentanaAlmacen();
-            x.ShowDialog();
+            
 
         }
 
@@ -113,6 +113,25 @@ namespace WindowsFormsApplication1
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            VentanaAlmacen x;
+            x = new VentanaAlmacen();
+            x.ShowDialog();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Pedido x;
+            x = new Pedido();
+            x.ShowDialog();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

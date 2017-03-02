@@ -26,24 +26,80 @@ namespace WindowsFormsApplication1
         public string NombreProv
         {
             get { return _NombreProv; }
-            set { _NombreProv = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El nombre del cliente no debe quedar vacío.");
+                }
+                else if (value.Length > 25)
+                {
+                    throw new Exception("El nombre del Proveedor no debe tener mas de 25 caracteres");
+                }
+                else
+                {
+                    _NombreProv = value.ToUpper();
+                }
+            }
         }
         public string DireccionProv
         {
             get { return _DireccionProv; }
-            set { _DireccionProv = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El telefono no debe quedar en blanco");
+                }
+                else if (value.Length > 9)
+                {
+                    throw new Exception("El telefono no debe tener mas de 9");
+                }
+                else
+                {
+                    _DireccionProv = value.ToUpper();
+                }
+            }
         }
 
         public string TelefonoProv
         {
             get { return _TelefonoProv; }
-            set { _TelefonoProv = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El campo RUC no bede quedar vacio");
+                }
+                else if (value.Length != 8)
+                {
+                    throw new Exception("No debe contener mas de 8 caracteres");
+                }
+                else
+                {
+                    _TelefonoProv = value;
+                }
+            }
         }
 
         public string EmailProv
         {
             get { return _EmailProv; }
-            set { _EmailProv = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El Correo electronico no debe quedar vacio.");
+                }
+                else if (value.Length > 20)
+                {
+                    throw new Exception("El correo electronico no debe exceder mas de 20");
+                }
+                else
+                {
+                    _EmailProv = value.ToUpper();
+                }
+            }
         }
 
         public void InsertarProveedor()
