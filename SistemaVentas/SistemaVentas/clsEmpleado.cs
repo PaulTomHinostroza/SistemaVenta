@@ -116,7 +116,7 @@ namespace WindowsFormsApplication1
         public void InsertarEmpleado()
         {
            
-            SqlConnection conexion = new SqlConnection("Server=ADMIN\\SQLEXPRESS;Database=CentroComercial;USER=sa;PWD=continental");
+            SqlConnection conexion = new SqlConnection("Server=.;Database=CentroComercial;USER=sa;PWD=continental");
             SqlCommand cmd = new SqlCommand("usp_Empleado_Insertar", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@parNombres_Emp", NombresEmp);
@@ -142,7 +142,7 @@ namespace WindowsFormsApplication1
         public static List<clsEmpleado> Listar()
         {
             List<clsEmpleado> x = new List<clsEmpleado>();
-            SqlConnection conexion = new SqlConnection("Server=ADMIN\\SQLEXPRESS;Database=CentroComercial;USER=sa;PWD=continental");
+            SqlConnection conexion = new SqlConnection("Server=.;Database=CentroComercial;USER=sa;PWD=continental");
             SqlCommand cmd = new SqlCommand("usp_Empleado_Listar_Todos", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             conexion.Open();
@@ -164,7 +164,7 @@ namespace WindowsFormsApplication1
 
         public void ActualizarEmpleado()
         {
-            SqlConnection conexion = new SqlConnection("Server=ADMIN\\SQLEXPRESS;Database=CentroComercial;USER=sa;PWD=continental");
+            SqlConnection conexion = new SqlConnection("Server=.;Database=CentroComercial;USER=sa;PWD=continental");
             SqlCommand cmd = new SqlCommand("usp_Empleado_Actualizar_Datos", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@parNombres_Emp", NombresEmp);

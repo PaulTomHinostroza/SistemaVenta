@@ -92,7 +92,7 @@ namespace WindowsFormsApplication1
         public void InsertarProducto()
         {
             SqlConnection conexion;
-            conexion = new SqlConnection("SERVER=ADMIN\\SQLEXPRESS;DATABASE=CentroComercial;USER=sa;PWD=continental");
+            conexion = new SqlConnection("SERVER=.;DATABASE=CentroComercial;USER=sa;PWD=continental");
             SqlCommand comando1;
             comando1 = new SqlCommand("usp_Producto_Insertar", conexion);
             comando1.CommandType = System.Data.CommandType.StoredProcedure;
@@ -114,7 +114,7 @@ namespace WindowsFormsApplication1
         public static List<clsProducto> Listar_Todos()
         {
             List<clsProducto> x = new List<clsProducto>();
-            SqlConnection conexion = new SqlConnection("Server=ADMIN\\SQLEXPRESS;Database=CentroComercial;USER=sa;PWD=continental");
+            SqlConnection conexion = new SqlConnection("Server=.;Database=CentroComercial;USER=sa;PWD=continental");
             SqlCommand cmd = new SqlCommand("usp_Producto_Listar_Todos", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             conexion.Open();

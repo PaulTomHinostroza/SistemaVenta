@@ -19,11 +19,23 @@ namespace WindowsFormsApplication1
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            clsProveedor NuevoProveedor;
-            NuevoProveedor = new clsProveedor(txtNombres.Text, txtDireccion.Text, txtTelefono.Text);
-            NuevoProveedor.EmailProv = txtEmail.Text;
-            NuevoProveedor.InsertarProveedor();
-            MessageBox.Show("Proveedor Registrado");
+
+            try
+            {
+                clsProveedor NuevoProveedor;
+                NuevoProveedor = new clsProveedor(txtNombres.Text, txtDireccion.Text, txtTelefono.Text);
+                NuevoProveedor.EmailProv = txtEmail.Text;
+                NuevoProveedor.InsertarProveedor();
+                   MessageBox.Show("Proveedor Registrado");
+            }
+            catch (Exception ErrorProv)
+            {
+
+                MessageBox.Show(ErrorProv.Message);
+                
+            }
+
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

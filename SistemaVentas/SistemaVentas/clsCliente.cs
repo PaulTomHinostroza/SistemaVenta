@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
         public void InsertarCliente()
         {
             SqlConnection conexion;
-            conexion = new SqlConnection("SERVER=ADMIN\\SQLEXPRESS;DATABASE=CentroComercial;USER=sa;PWD=continental");
+            conexion = new SqlConnection("SERVER=.;DATABASE=CentroComercial;USER=sa;PWD=continental");
             SqlCommand comando1;
             comando1 = new SqlCommand("usp_Cliente_Insertar", conexion);
             comando1.CommandType = System.Data.CommandType.StoredProcedure;

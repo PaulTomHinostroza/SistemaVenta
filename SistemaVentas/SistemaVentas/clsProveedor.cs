@@ -49,11 +49,11 @@ namespace WindowsFormsApplication1
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new Exception("El telefono no debe quedar en blanco");
+                    throw new Exception("La direccion no debe quedar en blanco");
                 }
-                else if (value.Length > 9)
+                else if (value.Length > 35)
                 {
-                    throw new Exception("El telefono no debe tener mas de 9");
+                    throw new Exception("La direccion no debe contener mas de 35");
                 }
                 else
                 {
@@ -69,7 +69,7 @@ namespace WindowsFormsApplication1
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new Exception("El campo RUC no bede quedar vacio");
+                    throw new Exception("El campo Telefono no bede quedar vacio");
                 }
                 else if (value.Length != 8)
                 {
@@ -87,25 +87,14 @@ namespace WindowsFormsApplication1
             get { return _EmailProv; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new Exception("El Correo electronico no debe quedar vacio.");
-                }
-                else if (value.Length > 20)
-                {
-                    throw new Exception("El correo electronico no debe exceder mas de 20");
-                }
-                else
-                {
-                    _EmailProv = value.ToUpper();
-                }
+                _EmailProv = value;
             }
         }
 
         public void InsertarProveedor()
         {
             SqlConnection conexion;
-            conexion = new SqlConnection("SERVER=ADMIN\\SQLEXPRESS;DATABASE=CentroComercial;USER=sa;PWD=continental");
+            conexion = new SqlConnection("SERVER=.;DATABASE=CentroComercial;USER=sa;PWD=continental");
             SqlCommand comando1;
             comando1 = new SqlCommand("usp_Proveedor_Insertar", conexion);
             comando1.CommandType = System.Data.CommandType.StoredProcedure;
