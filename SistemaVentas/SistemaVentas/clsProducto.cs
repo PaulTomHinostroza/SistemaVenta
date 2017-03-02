@@ -86,7 +86,8 @@ namespace WindowsFormsApplication1
                    else
                   {
                      _DescripcionProd = value.ToUpper();
-                  }}
+                  }
+                 }
         }
 
         public void InsertarProducto()

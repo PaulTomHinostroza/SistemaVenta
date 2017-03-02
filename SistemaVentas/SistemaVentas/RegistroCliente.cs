@@ -19,22 +19,32 @@ namespace WindowsFormsApplication1
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            clsCliente nuevocliente;
-            if (rbnMasculino.Checked == true)
-            {
-                nuevocliente = new clsCliente(txtNombres.Text, txtApellidos.Text, txtDNI.Text, txtDireccion.Text,
-                                                'M', txtRUC.Text);
-            }
-            else
-            {
-                nuevocliente = new clsCliente(txtNombres.Text, txtApellidos.Text, txtDNI.Text, txtDireccion.Text,
-                                                'F', txtRUC.Text);
-            }
 
-            nuevocliente.TelefonoCli = txtTelefono.Text;
-            nuevocliente.EmailCli = txtEmail.Text;
-            nuevocliente.InsertarCliente();
-            MessageBox.Show("Cliente Registrado");
+            try
+            {
+                clsCliente nuevocliente;
+                if (rbnMasculino.Checked == true)
+                {
+                    nuevocliente = new clsCliente(txtNombres.Text, txtApellidos.Text, txtDNI.Text, txtDireccion.Text,
+                                                    'M', txtRUC.Text);
+                }
+                else
+                {
+                    nuevocliente = new clsCliente(txtNombres.Text, txtApellidos.Text, txtDNI.Text, txtDireccion.Text,
+                                                    'F', txtRUC.Text);
+                }
+
+                nuevocliente.TelefonoCli = txtTelefono.Text;
+                nuevocliente.EmailCli = txtEmail.Text;
+                nuevocliente.InsertarCliente();
+                MessageBox.Show("Cliente Registrado");
+            }
+            catch (Exception ErrorRegCli)
+            {
+                MessageBox.Show(ErrorRegCli.Message);
+                
+            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

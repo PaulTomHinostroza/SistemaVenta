@@ -44,7 +44,17 @@ namespace WindowsFormsApplication1
         public string DNICli
         {
             get { return _DNICli; }
-            set { _DNICli = value; }
+            set
+            {
+                if (value.Length != 8)
+                {
+                    throw new Exception("El DNI  debe tener  8 caracteres");
+                }
+                else
+                {
+                    _DNICli = value.ToUpper();
+                }
+            }
         }
 
         public string DireccionCli
@@ -55,7 +65,17 @@ namespace WindowsFormsApplication1
         public string TelefonoCli
         {
             get { return _TelefonoCli; }
-            set { _TelefonoCli = value; }
+            set
+            {
+                if (value.Length != 9)
+                {
+                    throw new Exception("El Telefono del cliente no debe exceder mas de 9 caracteres");
+                }
+                else
+                {
+                    _TelefonoCli = value.ToUpper();
+                }
+            }
         }
 
 

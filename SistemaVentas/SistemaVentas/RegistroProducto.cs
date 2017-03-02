@@ -21,11 +21,21 @@ namespace WindowsFormsApplication1
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            clsProducto nuevoProducto;
-            nuevoProducto = new clsProducto(txtNombre.Text,txtMarca.Text);
-            nuevoProducto.DescripcionProd = txtDescripcion.Text;
-            nuevoProducto.InsertarProducto();
-            MessageBox.Show("Producto Registrado");
+
+            try
+            {
+                clsProducto nuevoProducto;
+                nuevoProducto = new clsProducto(txtNombre.Text, txtMarca.Text);
+                nuevoProducto.DescripcionProd = txtDescripcion.Text;
+                nuevoProducto.InsertarProducto();
+                MessageBox.Show("Producto Registrado");
+            }
+            catch (Exception ErrorRegProd)
+            {
+
+                MessageBox.Show(ErrorRegProd.Message);
+            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

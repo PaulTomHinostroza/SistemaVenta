@@ -19,11 +19,21 @@ namespace WindowsFormsApplication1
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            clsCargo nuevoCargo;
-            nuevoCargo = new clsCargo(txtNombre.Text);
-            nuevoCargo.DescripcionCar = txtDescripcion.Text;
-            nuevoCargo.InsertarCargo();
-            MessageBox.Show("Cargo Registrado");
+
+            try
+            {
+                clsCargo nuevoCargo;
+                nuevoCargo = new clsCargo(txtNombre.Text);
+                nuevoCargo.DescripcionCar = txtDescripcion.Text;
+                nuevoCargo.InsertarCargo();
+                MessageBox.Show("Cargo Registrado");
+            }
+            catch (Exception ErrorRegCar)
+            {
+                MessageBox.Show(ErrorRegCar.Message);
+                
+            }
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

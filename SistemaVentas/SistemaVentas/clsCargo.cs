@@ -31,13 +31,37 @@ namespace WindowsFormsApplication1
         public string NombreCar
         {
             get { return _NombreCar; }
-            set { _NombreCar = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El nombre del cargo no debe quedar vacío.");
+                }
+                else if (value.Length > 30)
+                {
+                    throw new Exception("El nombre del Cargo no puede exceder mas de  30 caracteres");
+                }
+                else
+                {
+                    _NombreCar = value.ToUpper();
+                }
+            }
         }
 
         public string DescripcionCar
         {
             get { return _DescripcionCar; }
-            set { _DescripcionCar = value; }
+            set
+            {
+                if (value.Length > 40)
+                {
+                    throw new Exception("La descripccion del cargo no debe exceder mas de 40 caracteres");
+                }
+                else
+                {
+                    _DescripcionCar = value.ToUpper();
+                }
+            }
         }
 
         public void InsertarCargo()
