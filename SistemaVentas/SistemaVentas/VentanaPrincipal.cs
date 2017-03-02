@@ -31,16 +31,12 @@ namespace WindowsFormsApplication1
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            VentanaEmpleado x;
-            x = new VentanaEmpleado();
-            x.ShowDialog();
+            
         }
 
         private void btnCargos_Click(object sender, EventArgs e)
         {
-            VentanaCargos x;
-            x = new VentanaCargos();
-            x.ShowDialog();
+            
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
@@ -52,9 +48,7 @@ namespace WindowsFormsApplication1
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
-            VentanaProveedor x;
-            x = new VentanaProveedor();
-            x.ShowDialog();
+            
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -69,6 +63,42 @@ namespace WindowsFormsApplication1
             VentanaAlmacen x;
             x = new VentanaAlmacen();
             x.ShowDialog();
+
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            VentanaEmpleado x;
+            x = new VentanaEmpleado();
+            x.ShowDialog();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            VentanaCargos x;
+            x = new VentanaCargos();
+            x.ShowDialog();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            VentanaProveedor x;
+            x = new VentanaProveedor();
+            x.ShowDialog();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
 
         }
     }
