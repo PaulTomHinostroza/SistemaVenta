@@ -46,14 +46,7 @@ namespace WindowsFormsApplication1
             get { return _DNICli; }
             set
             {
-                if (value.Length != 8)
-                {
-                    throw new Exception("El DNI  debe tener  8 caracteres");
-                }
-                else
-                {
-                    _DNICli = value.ToUpper();
-                }
+                _DNICli = value; 
             }
         }
 
@@ -67,7 +60,7 @@ namespace WindowsFormsApplication1
             get { return _TelefonoCli; }
             set
             {
-                if (value.Length != 9)
+                if (value.Length < 9)
                 {
                     throw new Exception("El Telefono del cliente no debe exceder mas de 9 caracteres");
                 }
