@@ -24,5 +24,12 @@ namespace WindowsFormsApplication1
             x.ShowDialog();
 
         }
+
+        private void btnreportcli_Click(object sender, EventArgs e)
+        {
+            ReporteCliente x;
+            x = new ReporteCliente();
+            x.ShowDialog();
+        }
     }
 }
