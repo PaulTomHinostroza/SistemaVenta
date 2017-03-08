@@ -33,35 +33,79 @@ namespace WindowsFormsApplication1
         public string NombresCli
         {
             get { return _NombresCli; }
-            set { _NombresCli = value; }
+            set
+            {
+                if (value.Length > 60)
+                {
+                    throw new Exception("El nombre del cliente no debe exceder mas de 60 caracteres");
+                }
+                else
+                {
+                    _NombresCli = value.ToUpper();
+                }
+            }
         }
 
         public string ApellidosCli
         {
             get { return _ApellidosCli; }
-            set { _ApellidosCli = value; }
+            set
+            {
+                if (value.Length > 70)
+                {
+                    throw new Exception("El apellido del cliente no debe exceder mas de 70 caracteres");
+                }
+                else
+                {
+                    _ApellidosCli = value.ToUpper();
+                }
+            }
         }
         public string DNICli
         {
             get { return _DNICli; }
             set
             {
-                _DNICli = value; 
+                if (value.Length > 8)
+                {
+                    throw new Exception("El DNI del cliente no debe exceder mas de 8 caracteres");
+                }
+                else
+                {
+                    _DNICli = value.ToUpper();
+                } 
             }
         }
 
         public string DireccionCli
         {
             get { return _DireccionCli; }
-            set { _DireccionCli = value; }
+            set
+            {
+                if (value.Length > 80)
+                {
+                    throw new Exception("La direccion del cliente no debe exceder mas de 80 caracteres");
+                }
+                else
+                {
+                    _DireccionCli = value.ToUpper();
+                }
+            }
         }
         public string TelefonoCli
         {
             get { return _TelefonoCli; }
             set
             {
-                
-               _TelefonoCli = value;
+
+                if (value.Length > 9)
+                {
+                    throw new Exception("El telefono del cliente no debe exceder mas de 9 caracteres");
+                }
+                else
+                {
+                    _TelefonoCli = value.ToUpper();
+                }
                 
             }
         }
@@ -76,13 +120,33 @@ namespace WindowsFormsApplication1
         public string RUCCli
         {
             get { return _RUCCli; }
-            set { _RUCCli = value; }
+            set
+            {
+                if (value.Length > 10)
+                {
+                    throw new Exception("El RUC del cliente no debe exceder mas de 10 caracteres");
+                }
+                else
+                {
+                    _RUCCli = value.ToUpper();
+                }
+            }
         }
 
         public string EmailCli
         {
             get { return _EmailCli; }
-            set { _EmailCli = value; }
+            set
+            {
+                if (value.Length > 30)
+                {
+                    throw new Exception("El Correo electronico del cliente no debe exceder mas de 30 caracteres");
+                }
+                else
+                {
+                    _EmailCli = value.ToUpper();
+                }
+            }
 
         }
 

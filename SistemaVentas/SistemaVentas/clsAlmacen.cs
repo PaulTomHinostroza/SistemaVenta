@@ -60,7 +60,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    _Telefono = value;
+                    _Telefono = value.ToUpper();
                 }
             }
         }
