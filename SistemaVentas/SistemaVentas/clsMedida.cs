@@ -30,7 +30,17 @@ namespace WindowsFormsApplication1
         public string Nombre
         {
             get { return _Nombre; }
-            set { _Nombre = value; }
+            set
+            {
+                if (value.Length > 30)
+                {
+                    throw new Exception("La medida no debe psar mas de 30 caracteres");
+                }
+                else
+                {
+                    _Nombre = value.ToUpper();
+                }
+            }
         }
 
         public void InsertarMedida()

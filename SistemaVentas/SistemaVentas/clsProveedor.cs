@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new Exception("El nombre del cliente no debe quedar vacío.");
+                    throw new Exception("El nombre del proveedor no debe quedar vacío.");
                 }
                 else if (value.Length > 25)
                 {
@@ -49,11 +49,11 @@ namespace WindowsFormsApplication1
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new Exception("La direccion no debe quedar en blanco");
+                    throw new Exception("La direccion  del Proveedor no debe quedar en blanco");
                 }
-                else if (value.Length > 35)
+                else if (value.Length > 80)
                 {
-                    throw new Exception("La direccion no debe contener mas de 35");
+                    throw new Exception("La direccion del Proveedor no debe contener mas de 80");
                 }
                 else
                 {
@@ -69,11 +69,11 @@ namespace WindowsFormsApplication1
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new Exception("El campo Telefono no bede quedar vacio");
+                    throw new Exception("El  Telefono del Proveedor no debe quedar vacio");
                 }
-                else if (value.Length != 8)
+                else if (value.Length != 9)
                 {
-                    throw new Exception("No debe contener mas de 8 caracteres");
+                    throw new Exception(" El  Telefono del Proveedor ndebe contener  9 caracteres");
                 }
                 else
                 {
@@ -87,7 +87,18 @@ namespace WindowsFormsApplication1
             get { return _EmailProv; }
             set
             {
-                _EmailProv = value;
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El  correo electornico del Proveedor no bede quedar vacio");
+                }
+                else if (value.Length > 30)
+                {
+                    throw new Exception(" El  correo electornico del Proveedor no debe contener mas de 30 caracteres");
+                }
+                else
+                {
+                    _EmailProv = value;
+                }
             }
         }
 

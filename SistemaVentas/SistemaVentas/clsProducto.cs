@@ -79,9 +79,9 @@ namespace WindowsFormsApplication1
         {
             get { return _DescripcionProd; }
             set { 
-                  if (value.Length > 25)
+                  if (value.Length > 100)
                   {
-                     throw new Exception("La descripccion del producto no debe exceder mas de 25 caracteres");
+                     throw new Exception("La descripccion del producto no debe exceder mas de 100 caracteres");
                   }
                    else
                   {

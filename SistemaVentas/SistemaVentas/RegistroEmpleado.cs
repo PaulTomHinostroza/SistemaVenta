@@ -26,23 +26,32 @@ namespace WindowsFormsApplication1
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            clsEmpleado nuevoEmpleado;
-            if (rbMasculino.Checked==true)
+            try
             {
-                nuevoEmpleado = new clsEmpleado(LosCargos[cmbCargo.SelectedIndex], txtNombres.Text,
-                                          txtApellidos.Text, txtDNI.Text, txtTelefono.Text,
-                                          'M', Convert.ToDateTime(dtpFechaNacimiento.Value.Date));
+                clsEmpleado nuevoEmpleado;
+                if (rbMasculino.Checked == true)
+                {
+                    nuevoEmpleado = new clsEmpleado(LosCargos[cmbCargo.SelectedIndex], txtNombres.Text,
+                                              txtApellidos.Text, txtDNI.Text, txtTelefono.Text,
+                                              'M', Convert.ToDateTime(dtpFechaNacimiento.Value.Date));
+                }
+                else
+                {
+                    nuevoEmpleado = new clsEmpleado(LosCargos[cmbCargo.SelectedIndex], txtNombres.Text,
+                                              txtApellidos.Text, txtDNI.Text, txtTelefono.Text,
+                                              'F', Convert.ToDateTime(dtpFechaNacimiento.Value.Date));
+
+                }
+                nuevoEmpleado.EmailEmp = txtEmail.Text;
+                nuevoEmpleado.InsertarEmpleado();
+                MessageBox.Show("Empleado Registrado");
             }
-            else
+            catch (Exception ErrorRegEm)
             {
-                nuevoEmpleado = new clsEmpleado(LosCargos[cmbCargo.SelectedIndex], txtNombres.Text,
-                                          txtApellidos.Text, txtDNI.Text, txtTelefono.Text,
-                                          'F', Convert.ToDateTime(dtpFechaNacimiento.Value.Date));
-                
+
+                MessageBox.Show(ErrorRegEm.Message);
             }
-            nuevoEmpleado.EmailEmp = txtEmail.Text;
-            nuevoEmpleado.InsertarEmpleado();
-            MessageBox.Show("Empleado Registrado");
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

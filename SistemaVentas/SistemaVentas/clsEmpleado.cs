@@ -78,11 +78,11 @@ namespace WindowsFormsApplication1
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new Exception("El nombre del cliente no debe quedar vacío.");
+                    throw new Exception("El nombre del Empleado no debe quedar vacío.");
                 }
                 else if (value.Length > 30)
                 {
-                    throw new Exception("El nombre del Empelado no debe tener mas de 30 caracteres");
+                    throw new Exception("El nombre del Empleado no debe tener mas de 30 caracteres");
                 }
                 else
                 {
@@ -94,19 +94,61 @@ namespace WindowsFormsApplication1
         public string ApellidosEmp
         {
             get { return _ApellidosEmp; }
-            set { _ApellidosEmp = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El Apellido  del Empleado no debe quedar vacío.");
+                }
+                else if (value.Length > 60)
+                {
+                    throw new Exception("El apellido del Empleado no debe tener mas de 60 caracteres");
+                }
+                else
+                {
+                    _ApellidosEmp = value.ToUpper();
+                }
+            }
         }
 
         public string DNIEmp
         {
             get { return _DNIEmp; }
-            set { _DNIEmp = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El DNI  del Empleado no debe quedar vacío.");
+                }
+                else if (value.Length != 8)
+                {
+                    throw new Exception("El DNI del Empleado  debe tener  8 caracteres");
+                }
+                else
+                {
+                    _DNIEmp = value.ToUpper();
+                }
+            }
         }
 
         public string TelefonoEmp
         {
             get { return _TelefonoEmp; }
-            set { _TelefonoEmp = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El telefono del Empleado no debe quedar vacío.");
+                }
+                else if (value.Length != 9)
+                {
+                    throw new Exception("El telefono del Empleado  debe tener  9 caracteres");
+                }
+                else
+                {
+                    _TelefonoEmp = value.ToUpper();
+                }
+            }
         }
 
         public char GeneroEmp
@@ -118,7 +160,21 @@ namespace WindowsFormsApplication1
         public string EmailEmp
         {
             get { return _EmailEmp; }
-            set { _EmailEmp = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El correo electronico  del Empleado no debe quedar vacío.");
+                }
+                else if (value.Length > 30)
+                {
+                    throw new Exception("El correo electronico del Empleado no debe tener mas de 30 caracteres");
+                }
+                else
+                {
+                    _EmailEmp = value.ToUpper();
+                }
+            }
         }
 
         public DateTime FechaNacEmp

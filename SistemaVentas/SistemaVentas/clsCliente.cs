@@ -66,7 +66,7 @@ namespace WindowsFormsApplication1
             get { return _DNICli; }
             set
             {
-                if (value.Length > 8)
+                if (value.Length !=8)
                 {
                     throw new Exception("El DNI del cliente no debe exceder mas de 8 caracteres");
                 }
@@ -98,9 +98,9 @@ namespace WindowsFormsApplication1
             set
             {
 
-                if (value.Length > 9)
+                if (value.Length != 9)
                 {
-                    throw new Exception("El telefono del cliente no debe exceder mas de 9 caracteres");
+                    throw new Exception("El telefono del cliente  debe tener 9 caracteres");
                 }
                 else
                 {
@@ -124,7 +124,7 @@ namespace WindowsFormsApplication1
             {
                 if (value.Length > 10)
                 {
-                    throw new Exception("El RUC del cliente no debe exceder mas de 10 caracteres");
+                    throw new Exception("El RUC del cliente debe tener  10 caracteres");
                 }
                 else
                 {

@@ -32,11 +32,11 @@ namespace WindowsFormsApplication1
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new Exception("La direccion no debe quedar vacio");
+                    throw new Exception("La direccion del almacen no debe quedar vacio");
                 }
                 else if (value.Length > 80)
                 {
-                    throw new Exception("La direccion no puede contener mas de 80 caracteres");
+                    throw new Exception("La direccion del almacen no puede contener mas de 80 caracteres");
                 }
                 else
                 {
@@ -52,11 +52,11 @@ namespace WindowsFormsApplication1
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new Exception("El telefono no debe quedar vacio");
+                    throw new Exception("El telefono del almacen no debe quedar vacio");
                 }
-                else if (value.Length > 9)
+                else if (value.Length !=9)
                 {
-                    throw new Exception("No debe exceder mas de 9");
+                    throw new Exception("EL telefono del almacen debe contener mas de 9 caracteres");
                 }
                 else
                 {
