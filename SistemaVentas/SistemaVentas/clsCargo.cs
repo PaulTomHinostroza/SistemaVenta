@@ -66,7 +66,7 @@ namespace WindowsFormsApplication1
 
         public void InsertarCargo()
         {
-            SqlConnection conexion = new SqlConnection("Server=.;Database=CentroComercial;USER=sa;PWD=continental");
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
             SqlCommand cmd = new SqlCommand("usp_Cargo_Insertar", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@parNombre_Car", NombreCar);
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
         public static List<clsCargo> Listar()
         {
             List<clsCargo> x = new List<clsCargo>();
-            SqlConnection conexion = new SqlConnection("Server=.;Database=CentroComercial;USER=sa;PWD=continental");
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
             SqlCommand cmd = new SqlCommand("usp_Cargo_Listar_Todos", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             conexion.Open();

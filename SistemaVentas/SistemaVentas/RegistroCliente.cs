@@ -26,15 +26,16 @@ namespace WindowsFormsApplication1
                 if (rbnMasculino.Checked == true)
                 {
                     nuevocliente = new clsCliente(txtNombres.Text, txtApellidos.Text, txtDNI.Text, txtDireccion.Text,
-                                                    'M', txtRUC.Text);
+                                                    'M');
                 }
                 else
                 {
                     nuevocliente = new clsCliente(txtNombres.Text, txtApellidos.Text, txtDNI.Text, txtDireccion.Text,
-                                                    'F', txtRUC.Text);
+                                                    'F');
                 }
 
                 nuevocliente.TelefonoCli = txtTelefono.Text;
+                nuevocliente.RUCCli = txtRUC.Text;
                 nuevocliente.EmailCli = txtEmail.Text;
                 nuevocliente.InsertarCliente();
                 MessageBox.Show("Cliente Registrado");

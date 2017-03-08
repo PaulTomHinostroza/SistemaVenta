@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1
 
         public void InsertarAlmacen()
         {
-            SqlConnection conexion = new SqlConnection("Server=.;Database=CentroComercial;USER=sa;PWD=continental");
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
             SqlCommand cmd = new SqlCommand("usp_Almacen_Insertar", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@parDireccion", Direccion);

@@ -105,7 +105,7 @@ namespace WindowsFormsApplication1
         public void InsertarProveedor()
         {
             SqlConnection conexion;
-            conexion = new SqlConnection("SERVER=.;DATABASE=CentroComercial;USER=sa;PWD=continental");
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
             SqlCommand comando1;
             comando1 = new SqlCommand("usp_Proveedor_Insertar", conexion);
             comando1.CommandType = System.Data.CommandType.StoredProcedure;

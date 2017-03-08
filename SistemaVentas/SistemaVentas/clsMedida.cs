@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
 
         public void InsertarMedida()
         {
-            SqlConnection conexion = new SqlConnection("Server=.;Database=CentroComercial;USER=sa;PWD=continental");
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
             SqlCommand cmd = new SqlCommand("usp_Medida_Insertar", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@parNombre", Nombre);
@@ -57,7 +57,7 @@ namespace WindowsFormsApplication1
         public static List<clsMedida> Listar()
         {
             List<clsMedida> x = new List<clsMedida>();
-            SqlConnection conexion = new SqlConnection("Server=.;Database=CentroComercial;USER=sa;PWD=continental");
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
             SqlCommand cmd = new SqlCommand("usp_Medida_Listar_Todos", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             conexion.Open();

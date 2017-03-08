@@ -72,6 +72,7 @@
     <Compile Include="ListarProductoVenta.Designer.cs">
       <DependentUpon>ListarProductoVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="mdlVariables.cs" />
     <Compile Include="RegistroAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,17 +103,17 @@
     <Compile Include="RegistroStock.Designer.cs">
       <DependentUpon>RegistroStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroVenta.Designer.cs">
+      <DependentUpon>RegistroVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReporteCliente.Designer.cs">
       <DependentUpon>ReporteCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Venta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Venta.Designer.cs">
-      <DependentUpon>Venta.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -200,11 +201,11 @@
     <EmbeddedResource Include="RegistroStock.resx">
       <DependentUpon>RegistroStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistroVenta.resx">
+      <DependentUpon>RegistroVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteCliente.resx">
       <DependentUpon>ReporteCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Venta.resx">
-      <DependentUpon>Venta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

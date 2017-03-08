@@ -125,8 +125,8 @@ namespace WindowsFormsApplication1
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Pedido x;
-            x = new Pedido();
+            RegistroVenta x;
+            x = new RegistroVenta();
             x.ShowDialog();
         }
 

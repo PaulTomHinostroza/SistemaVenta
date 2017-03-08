@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class clsCliente
+    public class clsCliente
     {
         private string _NombresCli;
         private string _ApellidosCli;
@@ -22,15 +22,13 @@ namespace WindowsFormsApplication1
         
 
         public clsCliente(string parNombresCli, string parApellidosCli,
-                          string parDNICli, string parDireccionCli, char parGeneroCli,
-                          string parRUCCli)
+                          string parDNICli, string parDireccionCli, char parGeneroCli)
         {
             NombresCli = parNombresCli;
             ApellidosCli = parApellidosCli;
             DNICli = parDNICli;
             DireccionCli = parDireccionCli;            
             GeneroCli = parGeneroCli;
-            RUCCli = parRUCCli;
         }
 
         public clsCliente(string parNombresCli, string parApellidosCli,
@@ -48,6 +46,17 @@ namespace WindowsFormsApplication1
             EmailCli = parEmailCli;
 
 
+        }
+
+        public clsCliente(string parNombresCli, string parApellidosCli,
+                          string parDNICli, string parDireccionCli, char parGeneroCli, DateTime parFecha)
+        {
+            NombresCli = parNombresCli;
+            ApellidosCli = parApellidosCli;
+            DNICli = parDNICli;
+            DireccionCli = parDireccionCli;
+            GeneroCli = parGeneroCli;
+            FechaInscripcion = parFecha;
         }
 
         public string NombresCli
@@ -178,7 +187,7 @@ namespace WindowsFormsApplication1
         public void InsertarCliente()
         {
             SqlConnection conexion;
-            conexion = new SqlConnection("SERVER=.;DATABASE=CentroComercial;USER=sa;PWD=continental");
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
             SqlCommand comando1;
             comando1 = new SqlCommand("usp_Cliente_Insertar", conexion);
             comando1.CommandType = System.Data.CommandType.StoredProcedure;
@@ -188,7 +197,15 @@ namespace WindowsFormsApplication1
             comando1.Parameters.AddWithValue("@parDNI_Cli", DNICli);
             comando1.Parameters.AddWithValue("@parDireccion_Cli", DireccionCli);
             comando1.Parameters.AddWithValue("@parGenero_Cli", GeneroCli);
-            comando1.Parameters.AddWithValue("@parRUC_Cli", RUCCli);
+
+            if (string.IsNullOrEmpty(RUCCli))
+            {
+                comando1.Parameters.AddWithValue("@parRUC_Cli", DBNull.Value);
+            }
+            else
+            {
+                comando1.Parameters.AddWithValue("@parRUC_Cli", TelefonoCli);
+            }
 
             if (string.IsNullOrEmpty(TelefonoCli))
             {
@@ -219,7 +236,7 @@ namespace WindowsFormsApplication1
             List<clsCliente> x = new List<clsCliente>();
 
             SqlConnection conexion;
-            conexion = new SqlConnection("SERVER=.;DATABASE=CentroComercial;USER=sa;PWD=continental");
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
 
             SqlCommand comando;
             comando = new SqlCommand("usp_Cliente_Listar_Todos", conexion);
@@ -244,6 +261,132 @@ namespace WindowsFormsApplication1
                 x.Add(MiObjeto);
             }
             conexion.Close();
+            return x;
+        }
+
+        public static List<clsCliente> Buscar_PorApellido(string parametroApellido)
+        {
+            List<clsCliente> x = new List<clsCliente>();
+
+            SqlConnection conexion;
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+
+            SqlCommand comando;
+            comando = new SqlCommand("usp_Cliente_Buscar_PorApellidos", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parApellidosCliente", parametroApellido);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = comando.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsCliente MiObjeto;
+                MiObjeto = new clsCliente(contenedor["Nombres_Cli"].ToString(),
+                                            contenedor["Apellidos_Cli"].ToString(),
+                                            contenedor["DNI_Cli"].ToString(), contenedor["Direccion_Cli"].ToString(),
+                                            Convert.ToChar(contenedor["Genero_Cli"]), Convert.ToDateTime(contenedor["FechaInscripcion_Cli"]));
+
+                if (contenedor["telefono_Cli"] != DBNull.Value)
+                {
+                    MiObjeto.TelefonoCli = contenedor["telefono_Cli"].ToString();
+                }
+                if (contenedor["RUC_Cli"] != DBNull.Value)
+                {
+                    MiObjeto.RUCCli = contenedor["RUC_Cli"].ToString();
+                }
+                if (contenedor["Email_Cli"] != DBNull.Value)
+                {
+                    MiObjeto.EmailCli = contenedor["Email_Cli"].ToString();
+                }
+
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+
+            return x;
+        }
+
+        public static List<clsCliente> Buscar_PorNombres(string parametroNombres)
+        {
+            List<clsCliente> x = new List<clsCliente>();
+
+            SqlConnection conexion;
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+
+            SqlCommand comando;
+            comando = new SqlCommand("usp_Cliente_Buscar_PorNombres", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parNombresCliente", parametroNombres);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = comando.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsCliente MiObjeto;
+                MiObjeto = new clsCliente(contenedor["Nombres_Cli"].ToString(),
+                                            contenedor["Apellidos_Cli"].ToString(),
+                                            contenedor["DNI_Cli"].ToString(), contenedor["Direccion_Cli"].ToString(),
+                                            Convert.ToChar(contenedor["Genero_Cli"]), Convert.ToDateTime(contenedor["FechaInscripcion_Cli"]));
+
+                if (contenedor["telefono_Cli"] != DBNull.Value)
+                {
+                    MiObjeto.TelefonoCli = contenedor["telefono_Cli"].ToString();
+                }
+                if (contenedor["RUC_Cli"] != DBNull.Value)
+                {
+                    MiObjeto.RUCCli = contenedor["RUC_Cli"].ToString();
+                }
+                if (contenedor["Email_Cli"] != DBNull.Value)
+                {
+                    MiObjeto.EmailCli = contenedor["Email_Cli"].ToString();
+                }
+
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+
+            return x;
+        }
+
+        public static List<clsCliente> Buscar_PorDNI(string parametroDNI)
+        {
+            List<clsCliente> x = new List<clsCliente>();
+
+            SqlConnection conexion;
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+
+            SqlCommand comando;
+            comando = new SqlCommand("usp_Cliente_Buscar_PorDNI", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parDNICliente", parametroDNI);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = comando.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsCliente MiObjeto;
+                MiObjeto = new clsCliente(contenedor["Nombres_Cli"].ToString(),
+                                            contenedor["Apellidos_Cli"].ToString(),
+                                            contenedor["DNI_Cli"].ToString(), contenedor["Direccion_Cli"].ToString(),
+                                            Convert.ToChar(contenedor["Genero_Cli"]), Convert.ToDateTime(contenedor["FechaInscripcion_Cli"]));
+
+                if (contenedor["telefono_Cli"] != DBNull.Value)
+                {
+                    MiObjeto.TelefonoCli = contenedor["telefono_Cli"].ToString();
+                }
+                if (contenedor["RUC_Cli"] != DBNull.Value)
+                {
+                    MiObjeto.RUCCli = contenedor["RUC_Cli"].ToString();
+                }
+                if (contenedor["Email_Cli"] != DBNull.Value)
+                {
+                    MiObjeto.EmailCli = contenedor["Email_Cli"].ToString();
+                }
+
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+
             return x;
         }
 

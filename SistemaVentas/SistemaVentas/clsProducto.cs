@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
         public void InsertarProducto()
         {
             SqlConnection conexion;
-            conexion = new SqlConnection("SERVER=.;DATABASE=CentroComercial;USER=sa;PWD=continental");
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
             SqlCommand comando1;
             comando1 = new SqlCommand("usp_Producto_Insertar", conexion);
             comando1.CommandType = System.Data.CommandType.StoredProcedure;
@@ -115,7 +115,7 @@ namespace WindowsFormsApplication1
         public static List<clsProducto> Listar_Todos()
         {
             List<clsProducto> x = new List<clsProducto>();
-            SqlConnection conexion = new SqlConnection("Server=.;Database=CentroComercial;USER=sa;PWD=continental");
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
             SqlCommand cmd = new SqlCommand("usp_Producto_Listar_Todos", conexion);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             conexion.Open();
@@ -131,6 +131,68 @@ namespace WindowsFormsApplication1
                 x.Add(MiObjeto);
             }
             conexion.Close();
+            return x;
+        }
+
+        public static List<clsProducto> Buscar_PorNombre(string parametroNombre)
+        {
+            List<clsProducto> x = new List<clsProducto>();
+
+            SqlConnection conexion;
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+
+            SqlCommand comando;
+            comando = new SqlCommand("usp_Producto_Buscar_PorNombre", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parNombre", parametroNombre);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = comando.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsProducto MiObjeto;
+                MiObjeto = new clsProducto(contenedor["Nombre_Prod"].ToString(), contenedor["Marca_Prod"].ToString());
+
+                if (contenedor["Descripcion_Prod"] != DBNull.Value)
+                {
+                    MiObjeto.DescripcionProd = contenedor["Descripccion_Prod"].ToString();
+                }
+
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+
+            return x;
+        }
+
+        public static List<clsProducto> Buscar_PorMarca(string parametroMarca)
+        {
+            List<clsProducto> x = new List<clsProducto>();
+
+            SqlConnection conexion;
+            conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+
+            SqlCommand comando;
+            comando = new SqlCommand("usp_Producto_Buscar_PorMarca", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@parMarca", parametroMarca);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = comando.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                clsProducto MiObjeto;
+                MiObjeto = new clsProducto(contenedor["Nombre_Prod"].ToString(), contenedor["Marca_Prod"].ToString());
+
+                if (contenedor["Descripccion_Prod"] != DBNull.Value)
+                {
+                    MiObjeto.DescripcionProd = contenedor["Descripcion_Prod"].ToString();
+                }
+
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+
             return x;
         }
     }
