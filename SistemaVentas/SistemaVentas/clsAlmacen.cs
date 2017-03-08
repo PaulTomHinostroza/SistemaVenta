@@ -28,13 +28,41 @@ namespace WindowsFormsApplication1
         public string Direccion
         {
             get { return _Direccion; }
-            set { _Direccion = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("La direccion no debe quedar vacio");
+                }
+                else if (value.Length > 80)
+                {
+                    throw new Exception("La direccion no puede contener mas de 80 caracteres");
+                }
+                else
+                {
+                    _Direccion = value.ToUpper();
+                }
+            }
         }
 
         public string Telefono
         {
             get { return _Telefono; }
-            set { _Telefono = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El telefono no debe quedar vacio");
+                }
+                else if (value.Length > 9)
+                {
+                    throw new Exception("No debe exceder mas de 9");
+                }
+                else
+                {
+                    _Telefono = value;
+                }
+            }
         }
 
         public void InsertarAlmacen()
