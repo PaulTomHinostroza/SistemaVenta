@@ -156,6 +156,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegistroAlmacen";
             this.Text = "RegistroAlmacen";
+            this.Load += new System.EventHandler(this.RegistroAlmacen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

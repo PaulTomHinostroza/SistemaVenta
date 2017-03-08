@@ -277,6 +277,7 @@
             this.Name = "RegistroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroCliente";
+            this.Load += new System.EventHandler(this.RegistroCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

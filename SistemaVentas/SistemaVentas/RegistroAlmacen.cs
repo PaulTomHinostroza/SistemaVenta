@@ -19,10 +19,24 @@ namespace WindowsFormsApplication1
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            clsAlmacen nuevoAlmacen;
-            nuevoAlmacen = new clsAlmacen(txtDireccion.Text, txtTelefono.Text);
-            nuevoAlmacen.InsertarAlmacen();
-            MessageBox.Show("Almacen Registrado");
+            try
+            {
+                clsAlmacen nuevoAlmacen;
+                nuevoAlmacen = new clsAlmacen(txtDireccion.Text, txtTelefono.Text);
+                nuevoAlmacen.InsertarAlmacen();
+                MessageBox.Show("Almacen Registrado");
+            }
+            catch (Exception ErrorRegAl)
+            {
+
+                MessageBox.Show(ErrorRegAl.Message);
+            }
+            
+        }
+
+        private void RegistroAlmacen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -51,5 +51,10 @@ namespace WindowsFormsApplication1
         {
             Close();
         }
+
+        private void RegistroCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
