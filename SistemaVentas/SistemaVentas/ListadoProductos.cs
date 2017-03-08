@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class VentanaProductos : Form
+    public partial class ListadoProductos : Form
     {
         private clsProducto _ProductoSeleccionado;
 
@@ -28,39 +28,32 @@ namespace WindowsFormsApplication1
             set { _ProductosEncontrados = value; }
         }
 
-        public VentanaProductos()
+        public ListadoProductos()
         {
             InitializeComponent();
         }
 
-        private void btnInsertarMedida_Click_1(object sender, EventArgs e)
-        {
-            RegistroMedida x;
-            x = new RegistroMedida();
-            x.ShowDialog();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             RegistroProducto x;
             x = new RegistroProducto();
             x.ShowDialog();
         }
 
-        private void VentanaProductos_Load(object sender, EventArgs e)
+        private void ListadoProductos_Load(object sender, EventArgs e)
         {
             txtMarca.Visible = false;
             txtNombre.Visible = false;
         }
 
-        private void rbnNombre_CheckedChanged_1(object sender, EventArgs e)
+        private void rbnNombre_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbnMarca.Checked == true)
+            if (rbnMarca.Checked==true)
             {
                 txtMarca.Visible = true;
                 txtNombre.Visible = false;
             }
-            else if (rbnNombre.Checked == true)
+            else if (rbnNombre.Checked==true)
             {
                 txtMarca.Visible = false;
                 txtNombre.Visible = true;
@@ -69,7 +62,7 @@ namespace WindowsFormsApplication1
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            if (txtNombre.Text.Length >= 3)
+            if (txtNombre.Text.Length>=3)
             {
                 ProductosEncontrados.Clear();
                 lstvDatos.Items.Clear();
@@ -88,10 +81,7 @@ namespace WindowsFormsApplication1
                     }
                     contador = contador + 1;
                 }
-                
             }
-
-
         }
 
         private void txtMarca_TextChanged(object sender, EventArgs e)
@@ -115,13 +105,13 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void lstvDatos_DoubleClick_1(object sender, EventArgs e)
+        private void lstvDatos_DoubleClick(object sender, EventArgs e)
         {
             ProductoSeleccionado = ProductosEncontrados[lstvDatos.SelectedItems[0].Index];
             Close();
         }
 
-        private void rbnMarca_CheckedChanged_1(object sender, EventArgs e)
+        private void rbnMarca_CheckedChanged(object sender, EventArgs e)
         {
             if (rbnMarca.Checked == true)
             {
@@ -139,18 +129,5 @@ namespace WindowsFormsApplication1
         {
             ProductoSeleccionado = null;
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            RegistroPrecio x;
-            x = new RegistroPrecio();
-            x.ShowDialog();
-        }
-
-       
-
-
-
-
     }
 }

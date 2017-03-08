@@ -30,7 +30,6 @@
         {
             this.nudPrecio = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtMedida = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtProducto = new System.Windows.Forms.TextBox();
@@ -38,13 +37,16 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbMedida = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // nudPrecio
             // 
             this.nudPrecio.DecimalPlaces = 2;
-            this.nudPrecio.Location = new System.Drawing.Point(77, 154);
+            this.nudPrecio.Location = new System.Drawing.Point(77, 192);
             this.nudPrecio.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -57,23 +59,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 159);
+            this.label6.Location = new System.Drawing.Point(30, 197);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 34;
             this.label6.Text = "Precio";
             // 
-            // txtMedida
-            // 
-            this.txtMedida.Location = new System.Drawing.Point(77, 113);
-            this.txtMedida.Name = "txtMedida";
-            this.txtMedida.Size = new System.Drawing.Size(77, 20);
-            this.txtMedida.TabIndex = 33;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(29, 116);
+            this.label8.Location = new System.Drawing.Point(29, 154);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 13);
             this.label8.TabIndex = 32;
@@ -93,8 +88,10 @@
             // 
             this.txtProducto.Location = new System.Drawing.Point(77, 74);
             this.txtProducto.Name = "txtProducto";
+            this.txtProducto.ReadOnly = true;
             this.txtProducto.Size = new System.Drawing.Size(304, 20);
-            this.txtProducto.TabIndex = 37;
+            this.txtProducto.TabIndex = 1;
+            this.txtProducto.Click += new System.EventHandler(this.txtProducto_Click);
             // 
             // label2
             // 
@@ -107,7 +104,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(149, 206);
+            this.btnNuevo.Location = new System.Drawing.Point(149, 244);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 40;
@@ -116,7 +113,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(240, 206);
+            this.btnCancelar.Location = new System.Drawing.Point(240, 244);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 39;
@@ -125,18 +122,48 @@
             // 
             // btGuardar
             // 
-            this.btGuardar.Location = new System.Drawing.Point(53, 206);
+            this.btGuardar.Location = new System.Drawing.Point(53, 244);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(75, 23);
             this.btGuardar.TabIndex = 38;
             this.btGuardar.Text = "&Guardar";
             this.btGuardar.UseVisualStyleBackColor = true;
+            this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(77, 110);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.ReadOnly = true;
+            this.txtMarca.Size = new System.Drawing.Size(165, 20);
+            this.txtMarca.TabIndex = 42;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(29, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Marca";
+            // 
+            // cmbMedida
+            // 
+            this.cmbMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMedida.FormattingEnabled = true;
+            this.cmbMedida.Location = new System.Drawing.Point(77, 151);
+            this.cmbMedida.Name = "cmbMedida";
+            this.cmbMedida.Size = new System.Drawing.Size(123, 21);
+            this.cmbMedida.TabIndex = 43;
             // 
             // RegistroPrecio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 258);
+            this.ClientSize = new System.Drawing.Size(403, 306);
+            this.Controls.Add(this.cmbMedida);
+            this.Controls.Add(this.txtMarca);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btGuardar);
@@ -145,10 +172,10 @@
             this.Controls.Add(this.nudPrecio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtMedida);
             this.Controls.Add(this.label8);
             this.Name = "RegistroPrecio";
             this.Text = "RegistroPrecio";
+            this.Load += new System.EventHandler(this.RegistroPrecio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,7 +186,6 @@
 
         private System.Windows.Forms.NumericUpDown nudPrecio;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtMedida;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtProducto;
@@ -167,5 +193,8 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btGuardar;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbMedida;
     }
 }

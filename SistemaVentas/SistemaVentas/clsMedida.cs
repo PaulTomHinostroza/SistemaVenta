@@ -12,6 +12,8 @@ namespace WindowsFormsApplication1
         private int _IdMedida;
         private string _Nombre;
 
+        
+
         public clsMedida(string pNombre)
         {
             Nombre = pNombre;
@@ -20,6 +22,7 @@ namespace WindowsFormsApplication1
         {
             Nombre = pNombre;
             IdMedida = parIdMedida;
+
         }
         public int IdMedida
         {
@@ -42,6 +45,7 @@ namespace WindowsFormsApplication1
                 }
             }
         }
+
 
         public void InsertarMedida()
         {
@@ -68,6 +72,7 @@ namespace WindowsFormsApplication1
             {
                 clsMedida MiObjeto;
                 MiObjeto = new clsMedida(contenedor["Nombre"].ToString(),Convert.ToInt32(contenedor["IdMedida"]));
+               
 
                 x.Add(MiObjeto);
             }

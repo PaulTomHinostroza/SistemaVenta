@@ -19,13 +19,13 @@ namespace WindowsFormsApplication1
 
         private void RegistroVenta_Load(object sender, EventArgs e)
         {
-            lblIGV.Enabled = false;
-            txtIgv.Enabled = false;
+            lblIGV.Visible = false;
+            txtIgv.Visible = false;
 
             if (rbnGuia.Checked == true)
             {
-                lblIGV.Enabled = true;
-                txtIgv.Enabled = true;
+                lblIGV.Visible = true;
+                txtIgv.Visible = true;
             }
         }
 
@@ -63,5 +63,48 @@ namespace WindowsFormsApplication1
                 txtDescripcion.Text = x.ProductoSeleccionado.NombreProd;
             }
         }
+
+        private void rbnBoleta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbnFactura.Checked == true)
+            {
+                lblTipo.Text = "FACTURA";
+            }
+            else
+            {
+                if (rbnGuia.Checked==true)
+                {
+                    lblTipo.Text = "GUIA DE REMISION";
+                }
+                else
+                {
+                    lblTipo.Text = "BOLETA DE VENTA";    
+                }
+                
+            }
+        }
+
+        private void rbnGuia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbnFactura.Checked == true)
+            {
+                lblTipo.Text = "FACTURA";
+            }
+            else
+            {
+                if (rbnGuia.Checked == true)
+                {
+                    lblTipo.Text = "GUIA DE REMISION";
+                }
+                else
+                {
+                    lblTipo.Text = "BOLETA DE VENTA";
+                }
+
+            }
+        }
+
+
+
     }
 }

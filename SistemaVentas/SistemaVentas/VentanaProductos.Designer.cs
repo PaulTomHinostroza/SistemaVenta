@@ -34,6 +34,8 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.rbnMarca = new System.Windows.Forms.RadioButton();
@@ -43,6 +45,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnInsertarMedida = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -53,6 +56,7 @@
             this.btnCancelar.TabIndex = 32;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lstvDatos
             // 
@@ -60,13 +64,15 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
             this.lstvDatos.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDatos.FullRowSelect = true;
             this.lstvDatos.GridLines = true;
             this.lstvDatos.Location = new System.Drawing.Point(16, 100);
             this.lstvDatos.Name = "lstvDatos";
-            this.lstvDatos.Size = new System.Drawing.Size(563, 289);
+            this.lstvDatos.Size = new System.Drawing.Size(783, 289);
             this.lstvDatos.TabIndex = 31;
             this.lstvDatos.UseCompatibleStateImageBehavior = false;
             this.lstvDatos.View = System.Windows.Forms.View.Details;
@@ -91,12 +97,23 @@
             this.columnHeader4.Text = "Descripción";
             this.columnHeader4.Width = 126;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Medida";
+            this.columnHeader5.Width = 108;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Precio";
+            this.columnHeader6.Width = 81;
+            // 
             // txtMarca
             // 
             this.txtMarca.Location = new System.Drawing.Point(162, 64);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(161, 20);
             this.txtMarca.TabIndex = 30;
+            this.txtMarca.TextChanged += new System.EventHandler(this.txtMarca_TextChanged);
             // 
             // txtNombre
             // 
@@ -104,6 +121,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(385, 20);
             this.txtNombre.TabIndex = 29;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // rbnMarca
             // 
@@ -115,6 +133,7 @@
             this.rbnMarca.TabStop = true;
             this.rbnMarca.Text = "Marca";
             this.rbnMarca.UseVisualStyleBackColor = true;
+            this.rbnMarca.CheckedChanged += new System.EventHandler(this.rbnMarca_CheckedChanged_1);
             // 
             // rbnNombre
             // 
@@ -126,6 +145,7 @@
             this.rbnNombre.TabStop = true;
             this.rbnNombre.Text = "Nombre";
             this.rbnNombre.UseVisualStyleBackColor = true;
+            this.rbnNombre.CheckedChanged += new System.EventHandler(this.rbnNombre_CheckedChanged_1);
             // 
             // label1
             // 
@@ -152,32 +172,45 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 47);
             this.button1.TabIndex = 24;
-            this.button1.Text = "Insertar Producto";
+            this.button1.Text = "Registrar Producto";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnInsertarMedida
             // 
-            this.btnInsertarMedida.Location = new System.Drawing.Point(216, 406);
+            this.btnInsertarMedida.Location = new System.Drawing.Point(346, 406);
             this.btnInsertarMedida.Name = "btnInsertarMedida";
             this.btnInsertarMedida.Size = new System.Drawing.Size(75, 23);
             this.btnInsertarMedida.TabIndex = 23;
             this.btnInsertarMedida.Text = "Insertar";
             this.btnInsertarMedida.UseVisualStyleBackColor = true;
+            this.btnInsertarMedida.Click += new System.EventHandler(this.btnInsertarMedida_Click_1);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(168, 411);
+            this.label2.Location = new System.Drawing.Point(298, 411);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 22;
             this.label2.Text = "Medida";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(140, 395);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 47);
+            this.button2.TabIndex = 33;
+            this.button2.Text = "Registrar Precios";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // VentanaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 470);
+            this.ClientSize = new System.Drawing.Size(825, 456);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.txtMarca);
@@ -215,6 +248,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnInsertarMedida;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.Button button2;
 
     }
 }
