@@ -74,7 +74,21 @@ namespace WindowsFormsApplication1
         public string NombresEmp
         {
             get { return _NombresEmp; }
-            set { _NombresEmp = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("El nombre del cliente no debe quedar vacío.");
+                }
+                else if (value.Length > 30)
+                {
+                    throw new Exception("El nombre del Empelado no debe tener mas de 30 caracteres");
+                }
+                else
+                {
+                    _NombresEmp = value.ToUpper();
+                }
+            }
         }
 
         public string ApellidosEmp
