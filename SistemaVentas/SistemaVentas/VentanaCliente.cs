@@ -31,5 +31,36 @@ namespace WindowsFormsApplication1
             x = new ReporteCliente();
             x.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            lstvClientes.Items.Clear(); 
+            int contador = 1;
+            foreach (clsCliente ELEMENTO in clsCliente.ListarCliente())
+            {
+
+                lstvClientes.Items.Add(contador.ToString());
+                lstvClientes.Items[contador - 1].SubItems.Add(ELEMENTO.NombresCli);
+                lstvClientes.Items[contador - 1].SubItems.Add(ELEMENTO.ApellidosCli);
+                lstvClientes.Items[contador - 1].SubItems.Add(ELEMENTO.DNICli);
+                lstvClientes.Items[contador - 1].SubItems.Add(ELEMENTO.DireccionCli);
+                lstvClientes.Items[contador - 1].SubItems.Add(ELEMENTO.TelefonoCli);
+                lstvClientes.Items[contador - 1].SubItems.Add(ELEMENTO.GeneroCli.ToString());
+                lstvClientes.Items[contador - 1].SubItems.Add(ELEMENTO.RUCCli);
+                lstvClientes.Items[contador - 1].SubItems.Add(ELEMENTO.EmailCli);
+                lstvClientes.Items[contador - 1].SubItems.Add(ELEMENTO.FechaInscripcion.ToString());
+                if (contador % 2 == 0)
+                {
+                    lstvClientes.Items[contador - 1].BackColor = Color.Khaki;
+                }
+
+                contador = contador + 1;
+            }
+        }
     }
 }

@@ -17,6 +17,9 @@ namespace WindowsFormsApplication1
         private char _GeneroCli;
         private string _RUCCli;
         private string _EmailCli;
+        private DateTime _FechaInscripcion;
+
+        
 
         public clsCliente(string parNombresCli, string parApellidosCli,
                           string parDNICli, string parDireccionCli, char parGeneroCli,
@@ -25,9 +28,26 @@ namespace WindowsFormsApplication1
             NombresCli = parNombresCli;
             ApellidosCli = parApellidosCli;
             DNICli = parDNICli;
-            DireccionCli = parDireccionCli;
+            DireccionCli = parDireccionCli;            
             GeneroCli = parGeneroCli;
             RUCCli = parRUCCli;
+        }
+
+        public clsCliente(string parNombresCli, string parApellidosCli,
+                          string parDNICli, string parDireccionCli,string parTelefonoCli, char parGeneroCli,
+                          string parRUCCli, DateTime parFechaInscripcion,string parEmailCli)
+        {
+            NombresCli = parNombresCli;
+            ApellidosCli = parApellidosCli;
+            DNICli = parDNICli;
+            DireccionCli = parDireccionCli;
+            TelefonoCli = parTelefonoCli;
+            GeneroCli = parGeneroCli;
+            RUCCli = parRUCCli;
+            FechaInscripcion = parFechaInscripcion;
+            EmailCli = parEmailCli;
+
+
         }
 
         public string NombresCli
@@ -149,6 +169,11 @@ namespace WindowsFormsApplication1
             }
 
         }
+        public DateTime FechaInscripcion
+        {
+            get { return _FechaInscripcion; }
+            set { _FechaInscripcion = value; }
+        }
 
         public void InsertarCliente()
         {
@@ -188,5 +213,39 @@ namespace WindowsFormsApplication1
             conexion.Close();
 
         }
+
+        public static List<clsCliente> ListarCliente()
+        {
+            List<clsCliente> x = new List<clsCliente>();
+
+            SqlConnection conexion;
+            conexion = new SqlConnection("SERVER=.;DATABASE=CentroComercial;USER=sa;PWD=continental");
+
+            SqlCommand comando;
+            comando = new SqlCommand("usp_Cliente_Listar_Todos", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            conexion.Open();
+            SqlDataReader contenedor;            
+            contenedor = comando.ExecuteReader(); 
+            while (contenedor.Read() == true)
+            {             
+                clsCliente MiObjeto;
+                MiObjeto = new clsCliente(contenedor["Nombres_Cli"].ToString(),
+                                            contenedor["Apellidos_Cli"].ToString(),
+                                            contenedor["DNI_Cli"].ToString(),
+                                            contenedor["Direccion_Cli"].ToString(),
+                                            contenedor["Telefono_Cli"].ToString(), 
+                                            Convert.ToChar(contenedor["Genero_Cli"]),
+                                            contenedor["RUC_Cli"].ToString(),
+                                            Convert.ToDateTime(contenedor["FechaInscripcion_Cli"]),
+                                            contenedor["Email_Cli"].ToString());
+               
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+            return x;
+        }
+
     }
 }
