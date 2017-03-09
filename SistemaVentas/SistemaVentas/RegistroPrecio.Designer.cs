@@ -40,6 +40,7 @@
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbMedida = new System.Windows.Forms.ComboBox();
+            this.lblId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +79,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 24);
+            this.label1.Location = new System.Drawing.Point(28, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 24);
             this.label1.TabIndex = 34;
@@ -156,11 +157,21 @@
             this.cmbMedida.Size = new System.Drawing.Size(123, 21);
             this.cmbMedida.TabIndex = 43;
             // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(297, 38);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(0, 13);
+            this.lblId.TabIndex = 44;
+            this.lblId.Visible = false;
+            // 
             // RegistroPrecio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 306);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.cmbMedida);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label3);
@@ -196,5 +207,6 @@
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbMedida;
+        private System.Windows.Forms.Label lblId;
     }
 }

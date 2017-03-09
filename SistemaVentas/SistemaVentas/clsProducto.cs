@@ -151,9 +151,9 @@ namespace WindowsFormsApplication1
             while (contenedor.Read() == true)
             {
                 clsProducto MiObjeto;
-                MiObjeto = new clsProducto(contenedor["Nombre_Prod"].ToString(), contenedor["Marca_Prod"].ToString());
+                MiObjeto = new clsProducto(Convert.ToInt16(contenedor["IdProducto"]), contenedor["Nombre_Prod"].ToString(), contenedor["Marca_Prod"].ToString());
 
-                if (contenedor["Descripcion_Prod"] != DBNull.Value)
+                if (contenedor["Descripccion_Prod"] != DBNull.Value)
                 {
                     MiObjeto.DescripcionProd = contenedor["Descripccion_Prod"].ToString();
                 }
@@ -182,7 +182,7 @@ namespace WindowsFormsApplication1
             while (contenedor.Read() == true)
             {
                 clsProducto MiObjeto;
-                MiObjeto = new clsProducto(contenedor["Nombre_Prod"].ToString(), contenedor["Marca_Prod"].ToString());
+                MiObjeto = new clsProducto(Convert.ToInt16(contenedor["IdProducto"]), contenedor["Nombre_Prod"].ToString(), contenedor["Marca_Prod"].ToString());
 
                 if (contenedor["Descripccion_Prod"] != DBNull.Value)
                 {

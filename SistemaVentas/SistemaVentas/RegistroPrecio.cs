@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
             get { return _LasMedidas; }
             set { _LasMedidas = value; }
         }
-
+        
         public RegistroPrecio()
         {
             InitializeComponent();
@@ -40,14 +40,17 @@ namespace WindowsFormsApplication1
             {
                 txtProducto.Text = x.ProductoSeleccionado.NombreProd;
                 txtMarca.Text = x.ProductoSeleccionado.MarcaProd;
+                lblId.Text = x.ProductoSeleccionado.IdProducto.ToString();
             }
         }
 
         private void RegistroPrecio_Load(object sender, EventArgs e)
         {
+            LasMedidas.Clear();
             cmbMedida.Items.Clear();
             foreach (clsMedida elemento in clsMedida.Listar())
             {
+                LasMedidas.Add(elemento);
                 cmbMedida.Items.Add(elemento.Nombre);
             }
 
@@ -55,13 +58,14 @@ namespace WindowsFormsApplication1
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            ListadoProductos x;
-            x = new ListadoProductos();
-
+              
             clsPrecio nuevoPrecio;
-            nuevoPrecio= new clsPrecio(x.ProductoSeleccionado.IdProducto,LasMedidas[cmbMedida.SelectedIndex],Convert.ToDecimal(nudPrecio.Value));
+            nuevoPrecio = new clsPrecio(Convert.ToInt32(lblId.Text), LasMedidas[cmbMedida.SelectedIndex], Convert.ToDecimal(nudPrecio.Value));
             nuevoPrecio.InsertarPrecio();
             MessageBox.Show("Precio Registrado");
+            
+
+            
 
         }
     }
