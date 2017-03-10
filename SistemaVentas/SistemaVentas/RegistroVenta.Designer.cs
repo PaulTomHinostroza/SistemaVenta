@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,12 +48,14 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtIgv = new System.Windows.Forms.TextBox();
+            this.lblIGV = new System.Windows.Forms.Label();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.btnBusquedaProducto = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtPVenta = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtMedida = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -69,15 +71,13 @@
             this.rbnGuia = new System.Windows.Forms.RadioButton();
             this.rbnFactura = new System.Windows.Forms.RadioButton();
             this.rbnBoleta = new System.Windows.Forms.RadioButton();
-            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
-            this.txtIgv = new System.Windows.Forms.TextBox();
-            this.lblIGV = new System.Windows.Forms.Label();
+            this.cmbMedida = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -216,9 +216,9 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column4.HeaderText = "P. UNIT.";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -226,9 +226,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column3.HeaderText = "IMPORTE";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -251,6 +251,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.cmbMedida);
             this.groupBox4.Controls.Add(this.txtIgv);
             this.groupBox4.Controls.Add(this.lblIGV);
             this.groupBox4.Controls.Add(this.nudCantidad);
@@ -259,7 +260,6 @@
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.txtPVenta);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.txtMedida);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.txtMarca);
             this.groupBox4.Controls.Add(this.txtDescripcion);
@@ -272,6 +272,32 @@
             this.groupBox4.TabIndex = 33;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Producto";
+            // 
+            // txtIgv
+            // 
+            this.txtIgv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIgv.Location = new System.Drawing.Point(497, 59);
+            this.txtIgv.Name = "txtIgv";
+            this.txtIgv.ReadOnly = true;
+            this.txtIgv.Size = new System.Drawing.Size(75, 21);
+            this.txtIgv.TabIndex = 14;
+            this.txtIgv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblIGV
+            // 
+            this.lblIGV.AutoSize = true;
+            this.lblIGV.Location = new System.Drawing.Point(458, 61);
+            this.lblIGV.Name = "lblIGV";
+            this.lblIGV.Size = new System.Drawing.Size(33, 16);
+            this.lblIGV.TabIndex = 13;
+            this.lblIGV.Text = "IGV:";
+            // 
+            // nudCantidad
+            // 
+            this.nudCantidad.Location = new System.Drawing.Point(221, 58);
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(77, 21);
+            this.nudCantidad.TabIndex = 12;
             // 
             // btnBusquedaProducto
             // 
@@ -320,19 +346,10 @@
             this.label9.TabIndex = 6;
             this.label9.Text = "P. Venta:";
             // 
-            // txtMedida
-            // 
-            this.txtMedida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMedida.Location = new System.Drawing.Point(81, 59);
-            this.txtMedida.Name = "txtMedida";
-            this.txtMedida.Size = new System.Drawing.Size(63, 21);
-            this.txtMedida.TabIndex = 5;
-            this.txtMedida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 60);
+            this.label8.Location = new System.Drawing.Point(10, 61);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 16);
             this.label8.TabIndex = 4;
@@ -484,31 +501,14 @@
             this.rbnBoleta.UseVisualStyleBackColor = true;
             this.rbnBoleta.CheckedChanged += new System.EventHandler(this.rbnBoleta_CheckedChanged);
             // 
-            // nudCantidad
+            // cmbMedida
             // 
-            this.nudCantidad.Location = new System.Drawing.Point(221, 58);
-            this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(77, 21);
-            this.nudCantidad.TabIndex = 12;
-            // 
-            // txtIgv
-            // 
-            this.txtIgv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIgv.Location = new System.Drawing.Point(497, 59);
-            this.txtIgv.Name = "txtIgv";
-            this.txtIgv.ReadOnly = true;
-            this.txtIgv.Size = new System.Drawing.Size(75, 21);
-            this.txtIgv.TabIndex = 14;
-            this.txtIgv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblIGV
-            // 
-            this.lblIGV.AutoSize = true;
-            this.lblIGV.Location = new System.Drawing.Point(458, 61);
-            this.lblIGV.Name = "lblIGV";
-            this.lblIGV.Size = new System.Drawing.Size(33, 16);
-            this.lblIGV.TabIndex = 13;
-            this.lblIGV.Text = "IGV:";
+            this.cmbMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMedida.FormattingEnabled = true;
+            this.cmbMedida.Location = new System.Drawing.Point(65, 58);
+            this.cmbMedida.Name = "cmbMedida";
+            this.cmbMedida.Size = new System.Drawing.Size(79, 23);
+            this.cmbMedida.TabIndex = 15;
             // 
             // RegistroVenta
             // 
@@ -531,11 +531,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -565,7 +565,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPVenta;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtMedida;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtDescripcion;
@@ -584,5 +583,6 @@
         private System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.TextBox txtIgv;
         private System.Windows.Forms.Label lblIGV;
+        private System.Windows.Forms.ComboBox cmbMedida;
     }
 }

@@ -43,6 +43,7 @@ namespace WindowsFormsApplication1
             {
                 txtDatos.Text = x.ClienteSeleccionado.NombresCli;
                 txtDocIdentidad.Text = x.ClienteSeleccionado.DNICli;
+
             }
 
         }
@@ -61,6 +62,14 @@ namespace WindowsFormsApplication1
             {
                 txtMarca.Text = x.ProductoSeleccionado.MarcaProd;
                 txtDescripcion.Text = x.ProductoSeleccionado.NombreProd;
+                
+                cmbMedida.Items.Clear();
+                foreach (clsPrecio ELEMENTO in clsPrecio.ListarPreciosProducto(x.ProductoSeleccionado.IdProducto))
+                {
+
+                    cmbMedida.Items.Add(ELEMENTO.NombreMedida);
+
+                }
             }
         }
 

@@ -115,11 +115,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void lstvDatos_DoubleClick_1(object sender, EventArgs e)
-        {
-            ProductoSeleccionado = ProductosEncontrados[lstvDatos.SelectedItems[0].Index];
-            Close();
-        }
+        
 
         private void rbnMarca_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -165,6 +161,12 @@ namespace WindowsFormsApplication1
                 }
                 contador = contador + 1;
             }
+        }
+
+        private void lstvDatos_DoubleClick(object sender, EventArgs e)
+        {
+            ProductoSeleccionado = ProductosEncontrados[lstvDatos.SelectedItems[0].Index];
+            Close();
         }
 
        

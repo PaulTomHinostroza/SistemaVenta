@@ -77,6 +77,7 @@
             this.lstvDatos.UseCompatibleStateImageBehavior = false;
             this.lstvDatos.View = System.Windows.Forms.View.Details;
             this.lstvDatos.SelectedIndexChanged += new System.EventHandler(this.lstvDatos_SelectedIndexChanged);
+            this.lstvDatos.DoubleClick += new System.EventHandler(this.lstvDatos_DoubleClick);
             // 
             // columnHeader1
             // 
