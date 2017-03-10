@@ -31,11 +31,7 @@ namespace WindowsFormsApplication1
             lblIGV.Visible = false;
             txtIgv.Visible = false;
 
-            if (rbnGuia.Checked == true)
-            {
-                lblIGV.Visible = true;
-                txtIgv.Visible = true;
-            }
+            
         }
 
         private void btnBusqueda_Click_1(object sender, EventArgs e)
@@ -86,6 +82,9 @@ namespace WindowsFormsApplication1
 
         private void rbnBoleta_CheckedChanged(object sender, EventArgs e)
         {
+            lblIGV.Visible = true;
+            txtIgv.Visible = true;
+
             if (rbnFactura.Checked == true)
             {
                 lblTipo.Text = "FACTURA";
@@ -106,6 +105,9 @@ namespace WindowsFormsApplication1
 
         private void rbnGuia_CheckedChanged(object sender, EventArgs e)
         {
+            lblIGV.Visible = false;
+            txtIgv.Visible = false;
+
             if (rbnFactura.Checked == true)
             {
                 lblTipo.Text = "FACTURA";
@@ -136,7 +138,25 @@ namespace WindowsFormsApplication1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            decimal valorVenta;
 
+            if (true)
+            {
+                
+            }
+            valorVenta = nudCantidad.Value * Convert.ToDecimal(txtPVenta.Text);
+
+            lstvDatos.Items.Add((nudCantidad.Value).ToString());
+            lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(txtDescripcion.Text);
+            lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(txtMarca.Text);
+            lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(txtPVenta.Text);
+            lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(valorVenta.ToString());
+        }
+
+        private void rbnFactura_CheckedChanged(object sender, EventArgs e)
+        {
+            lblIGV.Visible = true;
+            txtIgv.Visible = true;
         }
 
 

@@ -45,7 +45,6 @@
             this.btnBusquedaProducto = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtPVenta = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
@@ -68,6 +67,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtPVenta = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -170,6 +170,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.txtPVenta);
             this.groupBox4.Controls.Add(this.cmbMedida);
             this.groupBox4.Controls.Add(this.txtIgv);
             this.groupBox4.Controls.Add(this.lblIGV);
@@ -177,7 +178,6 @@
             this.groupBox4.Controls.Add(this.btnBusquedaProducto);
             this.groupBox4.Controls.Add(this.btnAgregar);
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.txtPVenta);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.txtMarca);
@@ -256,16 +256,6 @@
             this.label10.Size = new System.Drawing.Size(65, 16);
             this.label10.TabIndex = 8;
             this.label10.Text = "Cantidad:";
-            // 
-            // txtPVenta
-            // 
-            this.txtPVenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPVenta.Location = new System.Drawing.Point(371, 59);
-            this.txtPVenta.Name = "txtPVenta";
-            this.txtPVenta.ReadOnly = true;
-            this.txtPVenta.Size = new System.Drawing.Size(75, 21);
-            this.txtPVenta.TabIndex = 7;
-            this.txtPVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -417,6 +407,7 @@
             this.rbnFactura.TabIndex = 3;
             this.rbnFactura.Text = "Factura";
             this.rbnFactura.UseVisualStyleBackColor = true;
+            this.rbnFactura.CheckedChanged += new System.EventHandler(this.rbnFactura_CheckedChanged);
             // 
             // rbnBoleta
             // 
@@ -474,11 +465,19 @@
             this.columnHeader5.Text = "V. de Venta";
             this.columnHeader5.Width = 102;
             // 
+            // txtPVenta
+            // 
+            this.txtPVenta.Location = new System.Drawing.Point(362, 57);
+            this.txtPVenta.Name = "txtPVenta";
+            this.txtPVenta.ReadOnly = true;
+            this.txtPVenta.Size = new System.Drawing.Size(90, 21);
+            this.txtPVenta.TabIndex = 16;
+            // 
             // RegistroVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 575);
+            this.ClientSize = new System.Drawing.Size(725, 550);
             this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEliminarItem);
@@ -518,7 +517,6 @@
         private System.Windows.Forms.Button btnBusquedaProducto;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtPVenta;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMarca;
@@ -545,5 +543,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.TextBox txtPVenta;
     }
 }
