@@ -17,6 +17,15 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
+ 
+        private int _IdProd;
+
+        public int IdProd
+        {
+            get { return _IdProd; }
+            set { _IdProd = value; }
+        }
+
         private void RegistroVenta_Load(object sender, EventArgs e)
         {
             lblIGV.Visible = false;
@@ -43,8 +52,9 @@ namespace WindowsFormsApplication1
             {
                 txtDatos.Text = x.ClienteSeleccionado.NombresCli;
                 txtDocIdentidad.Text = x.ClienteSeleccionado.DNICli;
-
+                
             }
+            
 
         }
 
@@ -62,13 +72,14 @@ namespace WindowsFormsApplication1
             {
                 txtMarca.Text = x.ProductoSeleccionado.MarcaProd;
                 txtDescripcion.Text = x.ProductoSeleccionado.NombreProd;
-                
+                IdProd = x.ProductoSeleccionado.IdProducto;
+
                 cmbMedida.Items.Clear();
                 foreach (clsPrecio ELEMENTO in clsPrecio.ListarPreciosProducto(x.ProductoSeleccionado.IdProducto))
                 {
-
+                    
                     cmbMedida.Items.Add(ELEMENTO.NombreMedida);
-
+                    
                 }
             }
         }
@@ -111,6 +122,16 @@ namespace WindowsFormsApplication1
                 }
 
             }
+        }
+
+        private void cmbMedida_SelectedValueChanged(object sender, EventArgs e)
+        {
+            foreach (clsPrecio ELEMENTO in clsPrecio.ListarPreciosProductoMedida(IdProd,cmbMedida.SelectedItem.ToString()))
+                {
+
+                    txtPVenta.Text = ELEMENTO.Precio.ToString();
+                    
+                }        
         }
 
 

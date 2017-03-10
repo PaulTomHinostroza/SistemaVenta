@@ -54,6 +54,19 @@ namespace WindowsFormsApplication1
             NombreMedida = parNombreMedida;
             Precio = parPrecio;
         }
+
+        public clsPrecio(int parIdProductoInt, int parIdMedidaInt, decimal parPrecio)
+        {
+            IdProductoInt = parIdProductoInt;
+            IdMedidaInt = parIdMedidaInt;
+            Precio = parPrecio;
+        }
+
+        public clsPrecio(int parIdProductoInt, string parNombreMed)
+        {
+            IdProductoInt = parIdProductoInt;
+            NombreMedida = parNombreMed;
+        }
         public clsProducto IdProducto
         {
             get { return _IdProducto; }
@@ -96,6 +109,7 @@ namespace WindowsFormsApplication1
             conexion.Open();
             SqlDataReader cont;
             cont = cmd.ExecuteReader();
+            
 
             while (cont.Read() == true)
             {
@@ -106,5 +120,29 @@ namespace WindowsFormsApplication1
             conexion.Close();
             return x;
         }
+        
+        public static List<clsPrecio> ListarPreciosProductoMedida(int parIdProducto,string parNombreMed)
+        {
+            List<clsPrecio> x = new List<clsPrecio>();
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand cmd = new SqlCommand("usp_Producto_Listar_PrecioMedida", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@parIdProducto", parIdProducto);
+            cmd.Parameters.AddWithValue("@parNombre", parNombreMed);
+            conexion.Open();
+            SqlDataReader cont;
+            cont = cmd.ExecuteReader();
+
+            while (cont.Read() == true)
+            {
+                clsPrecio MiObjeto;
+                MiObjeto = new clsPrecio(Convert.ToInt32(cont["IdProducto"]), cont["Nombre"].ToString(), Convert.ToDecimal(cont["Precio"]));
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+            return x;
+        }
+
+        
     }
 }
