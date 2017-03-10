@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,15 +37,8 @@
             this.btnEliminarItem = new System.Windows.Forms.Button();
             this.btnRegistrarVenta = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IdD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cmbMedida = new System.Windows.Forms.ComboBox();
             this.txtIgv = new System.Windows.Forms.TextBox();
             this.lblIGV = new System.Windows.Forms.Label();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
@@ -71,9 +62,13 @@
             this.rbnGuia = new System.Windows.Forms.RadioButton();
             this.rbnFactura = new System.Windows.Forms.RadioButton();
             this.rbnBoleta = new System.Windows.Forms.RadioButton();
-            this.cmbMedida = new System.Windows.Forms.ComboBox();
+            this.lstvDatos = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -146,7 +141,7 @@
             // btnEliminarItem
             // 
             this.btnEliminarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarItem.Location = new System.Drawing.Point(343, 498);
+            this.btnEliminarItem.Location = new System.Drawing.Point(344, 518);
             this.btnEliminarItem.Name = "btnEliminarItem";
             this.btnEliminarItem.Size = new System.Drawing.Size(110, 25);
             this.btnEliminarItem.TabIndex = 37;
@@ -156,7 +151,7 @@
             // btnRegistrarVenta
             // 
             this.btnRegistrarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarVenta.Location = new System.Drawing.Point(484, 498);
+            this.btnRegistrarVenta.Location = new System.Drawing.Point(485, 518);
             this.btnRegistrarVenta.Name = "btnRegistrarVenta";
             this.btnRegistrarVenta.Size = new System.Drawing.Size(126, 25);
             this.btnRegistrarVenta.TabIndex = 36;
@@ -166,88 +161,12 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(641, 498);
+            this.btnSalir.Location = new System.Drawing.Point(642, 518);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 25);
             this.btnSalir.TabIndex = 35;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdD,
-            this.Column1,
-            this.Column2,
-            this.Column4,
-            this.Column3,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 266);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(703, 211);
-            this.dataGridView1.TabIndex = 34;
-            // 
-            // IdD
-            // 
-            this.IdD.HeaderText = "IdV";
-            this.IdD.Name = "IdD";
-            this.IdD.ReadOnly = true;
-            this.IdD.Visible = false;
-            this.IdD.Width = 30;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "CANT.";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 70;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "D  E  S  C  R  I  P  C  I  Ó  N";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 330;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column4.HeaderText = "P. UNIT.";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 91;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column3.HeaderText = "IMPORTE";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 90;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "IdP";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Visible = false;
-            this.Column5.Width = 30;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "IGV";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
             // 
             // groupBox4
             // 
@@ -272,6 +191,16 @@
             this.groupBox4.TabIndex = 33;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Producto";
+            // 
+            // cmbMedida
+            // 
+            this.cmbMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMedida.FormattingEnabled = true;
+            this.cmbMedida.Location = new System.Drawing.Point(65, 58);
+            this.cmbMedida.Name = "cmbMedida";
+            this.cmbMedida.Size = new System.Drawing.Size(79, 23);
+            this.cmbMedida.TabIndex = 15;
+            this.cmbMedida.SelectedValueChanged += new System.EventHandler(this.cmbMedida_SelectedValueChanged);
             // 
             // txtIgv
             // 
@@ -317,6 +246,7 @@
             this.btnAgregar.TabIndex = 10;
             this.btnAgregar.Text = "&Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label10
             // 
@@ -501,26 +431,59 @@
             this.rbnBoleta.UseVisualStyleBackColor = true;
             this.rbnBoleta.CheckedChanged += new System.EventHandler(this.rbnBoleta_CheckedChanged);
             // 
-            // cmbMedida
+            // lstvDatos
             // 
-            this.cmbMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMedida.FormattingEnabled = true;
-            this.cmbMedida.Location = new System.Drawing.Point(65, 58);
-            this.cmbMedida.Name = "cmbMedida";
-            this.cmbMedida.Size = new System.Drawing.Size(79, 23);
-            this.cmbMedida.TabIndex = 15;
-            this.cmbMedida.SelectedValueChanged += new System.EventHandler(this.cmbMedida_SelectedValueChanged);
+            this.lstvDatos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lstvDatos.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstvDatos.FullRowSelect = true;
+            this.lstvDatos.GridLines = true;
+            this.lstvDatos.Location = new System.Drawing.Point(10, 256);
+            this.lstvDatos.Name = "lstvDatos";
+            this.lstvDatos.Size = new System.Drawing.Size(706, 245);
+            this.lstvDatos.TabIndex = 39;
+            this.lstvDatos.UseCompatibleStateImageBehavior = false;
+            this.lstvDatos.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Cantidad";
+            this.columnHeader1.Width = 87;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Descripción";
+            this.columnHeader2.Width = 289;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Marca";
+            this.columnHeader3.Width = 133;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "P.Unitario";
+            this.columnHeader4.Width = 91;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "V. de Venta";
+            this.columnHeader5.Width = 102;
             // 
             // RegistroVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 562);
+            this.ClientSize = new System.Drawing.Size(725, 575);
+            this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEliminarItem);
             this.Controls.Add(this.btnRegistrarVenta);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -529,7 +492,6 @@
             this.Load += new System.EventHandler(this.RegistroVenta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
@@ -552,14 +514,6 @@
         private System.Windows.Forms.Button btnEliminarItem;
         private System.Windows.Forms.Button btnRegistrarVenta;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnBusquedaProducto;
         private System.Windows.Forms.Button btnAgregar;
@@ -585,5 +539,11 @@
         private System.Windows.Forms.TextBox txtIgv;
         private System.Windows.Forms.Label lblIGV;
         private System.Windows.Forms.ComboBox cmbMedida;
+        private System.Windows.Forms.ListView lstvDatos;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

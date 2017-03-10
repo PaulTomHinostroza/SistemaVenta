@@ -238,6 +238,7 @@
     <EmbeddedResource Include="RegistroProveedor.resx">
       <DependentUpon>RegistroProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptEmpleados.rdlc" />
     <EmbeddedResource Include="VentanaAlmacen.resx">
       <DependentUpon>VentanaAlmacen.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +261,7 @@
       <DependentUpon>VentanaProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\DataSources\clsEmpleado.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
