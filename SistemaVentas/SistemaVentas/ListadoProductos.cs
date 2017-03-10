@@ -44,6 +44,7 @@ namespace WindowsFormsApplication1
         {
             txtMarca.Visible = false;
             txtNombre.Visible = false;
+
         }
 
         private void rbnNombre_CheckedChanged(object sender, EventArgs e)
@@ -129,5 +130,8 @@ namespace WindowsFormsApplication1
         {
             ProductoSeleccionado = null;
         }
-    }
-}
+
+        
+        }
+ }
+

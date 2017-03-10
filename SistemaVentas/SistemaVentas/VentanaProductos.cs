@@ -147,6 +147,26 @@ namespace WindowsFormsApplication1
             x.ShowDialog();
         }
 
+        private void lstvDatos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ProductoSeleccionado = ProductosEncontrados[lstvDatos.SelectedItems[0].Index];
+
+            lstvPrecio.Items.Clear();
+            int contador = 1;
+            foreach (clsPrecio ELEMENTO in clsPrecio.ListarPreciosProducto(ProductoSeleccionado.IdProducto))
+            {
+                
+                lstvPrecio.Items.Add(ELEMENTO.NombreMedida);
+                lstvPrecio.Items[contador - 1].SubItems.Add(ELEMENTO.Precio.ToString());
+
+                if (contador % 2 == 0)
+                {
+                    lstvPrecio.Items[contador - 1].BackColor = Color.DarkCyan;
+                }
+                contador = contador + 1;
+            }
+        }
+
        
 
 

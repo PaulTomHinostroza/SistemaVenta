@@ -34,8 +34,6 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.rbnMarca = new System.Windows.Forms.RadioButton();
@@ -46,11 +44,15 @@
             this.btnInsertarMedida = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lstvPrecio = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(504, 406);
+            this.btnCancelar.Location = new System.Drawing.Point(512, 571);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 32;
@@ -64,18 +66,17 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader4});
             this.lstvDatos.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstvDatos.FullRowSelect = true;
             this.lstvDatos.GridLines = true;
             this.lstvDatos.Location = new System.Drawing.Point(16, 100);
             this.lstvDatos.Name = "lstvDatos";
-            this.lstvDatos.Size = new System.Drawing.Size(783, 289);
+            this.lstvDatos.Size = new System.Drawing.Size(571, 245);
             this.lstvDatos.TabIndex = 31;
             this.lstvDatos.UseCompatibleStateImageBehavior = false;
             this.lstvDatos.View = System.Windows.Forms.View.Details;
+            this.lstvDatos.SelectedIndexChanged += new System.EventHandler(this.lstvDatos_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -85,7 +86,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Nombre";
-            this.columnHeader2.Width = 335;
+            this.columnHeader2.Width = 296;
             // 
             // columnHeader3
             // 
@@ -95,17 +96,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Descripción";
-            this.columnHeader4.Width = 126;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Medida";
-            this.columnHeader5.Width = 108;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Precio";
-            this.columnHeader6.Width = 81;
+            this.columnHeader4.Width = 330;
             // 
             // txtMarca
             // 
@@ -168,7 +159,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(26, 395);
+            this.button1.Location = new System.Drawing.Point(391, 393);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 47);
             this.button1.TabIndex = 24;
@@ -178,7 +169,7 @@
             // 
             // btnInsertarMedida
             // 
-            this.btnInsertarMedida.Location = new System.Drawing.Point(346, 406);
+            this.btnInsertarMedida.Location = new System.Drawing.Point(391, 460);
             this.btnInsertarMedida.Name = "btnInsertarMedida";
             this.btnInsertarMedida.Size = new System.Drawing.Size(75, 23);
             this.btnInsertarMedida.TabIndex = 23;
@@ -189,7 +180,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(298, 411);
+            this.label2.Location = new System.Drawing.Point(306, 576);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 22;
@@ -197,7 +188,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(140, 395);
+            this.button2.Location = new System.Drawing.Point(391, 516);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 47);
             this.button2.TabIndex = 33;
@@ -205,11 +196,49 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(13, 367);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 16);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "Precio";
+            // 
+            // lstvPrecio
+            // 
+            this.lstvPrecio.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6});
+            this.lstvPrecio.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.lstvPrecio.FullRowSelect = true;
+            this.lstvPrecio.GridLines = true;
+            this.lstvPrecio.Location = new System.Drawing.Point(74, 393);
+            this.lstvPrecio.MultiSelect = false;
+            this.lstvPrecio.Name = "lstvPrecio";
+            this.lstvPrecio.Size = new System.Drawing.Size(270, 195);
+            this.lstvPrecio.TabIndex = 39;
+            this.lstvPrecio.UseCompatibleStateImageBehavior = false;
+            this.lstvPrecio.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Medida";
+            this.columnHeader5.Width = 122;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Precio";
+            this.columnHeader6.Width = 135;
+            // 
             // VentanaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 456);
+            this.ClientSize = new System.Drawing.Size(605, 602);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lstvPrecio);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lstvDatos);
@@ -248,9 +277,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnInsertarMedida;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListView lstvPrecio;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.Button button2;
 
     }
 }

@@ -13,6 +13,20 @@ namespace WindowsFormsApplication1
         private clsMedida _IdMedida;
         private decimal _Precio;
         private int _IdProductoInt;
+        private int _IdMedidaInt;
+        private string _NombreMedida;
+
+        public string NombreMedida
+        {
+            get { return _NombreMedida; }
+            set { _NombreMedida = value; }
+        }
+
+        public int IdMedidaInt
+        {
+            get { return _IdMedidaInt; }
+            set { _IdMedidaInt = value; }
+        }
 
         public int IdProductoInt
         {
@@ -34,6 +48,12 @@ namespace WindowsFormsApplication1
             Precio = parPrecio;
         }
 
+        public clsPrecio(int parIdProductoInt, string parNombreMedida, decimal parPrecio)
+        {
+            IdProductoInt = parIdProductoInt;
+            NombreMedida = parNombreMedida;
+            Precio = parPrecio;
+        }
         public clsProducto IdProducto
         {
             get { return _IdProducto; }
@@ -63,6 +83,28 @@ namespace WindowsFormsApplication1
             conexion.Open();
             cmd.ExecuteNonQuery();
             conexion.Close();
+        }
+
+
+        public static List<clsPrecio> ListarPreciosProducto(int parIdProducto)
+        {
+            List<clsPrecio> x = new List<clsPrecio>();
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand cmd = new SqlCommand("usp_Producto_Listar_MedidaPrecio", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@parIdProducto", parIdProducto);
+            conexion.Open();
+            SqlDataReader cont;
+            cont = cmd.ExecuteReader();
+
+            while (cont.Read() == true)
+            {
+                clsPrecio MiObjeto;
+                MiObjeto = new clsPrecio(Convert.ToInt32(cont["IdProducto"]),cont["Nombre"].ToString(), Convert.ToDecimal(cont["Precio"]));
+                x.Add(MiObjeto);
+            }
+            conexion.Close();
+            return x;
         }
     }
 }
