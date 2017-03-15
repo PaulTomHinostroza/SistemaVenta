@@ -254,7 +254,8 @@ namespace WindowsFormsApplication1
             ClienteSeleccionado = null;
         }
 
-        private void lstvDatos_DoubleClick_1(object sender, EventArgs e)
+
+        private void lstvDatos_DoubleClick(object sender, EventArgs e)
         {
             ClienteSeleccionado = ClienteEncontrado[lstvDatos.SelectedItems[0].Index];
             Close();

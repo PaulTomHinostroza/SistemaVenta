@@ -145,22 +145,28 @@ namespace WindowsFormsApplication1
 
         private void lstvDatos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ProductoSeleccionado = ProductosEncontrados[lstvDatos.SelectedItems[0].Index];
-
-            lstvPrecio.Items.Clear();
-            int contador = 1;
-            foreach (clsPrecio ELEMENTO in clsPrecio.ListarPreciosProducto(ProductoSeleccionado.IdProducto))
+            if (lstvDatos.SelectedItems.Count>0)
             {
-                
-                lstvPrecio.Items.Add(ELEMENTO.NombreMedida);
-                lstvPrecio.Items[contador - 1].SubItems.Add(ELEMENTO.Precio.ToString());
+                ProductoSeleccionado = ProductosEncontrados[lstvDatos.SelectedItems[0].Index];
 
-                if (contador % 2 == 0)
+                lstvPrecio.Items.Clear();
+                int contador = 1;
+                foreach (clsPrecio ELEMENTO in clsPrecio.ListarPreciosProducto(ProductoSeleccionado.IdProducto))
                 {
-                    lstvPrecio.Items[contador - 1].BackColor = Color.DarkCyan;
+
+                    lstvPrecio.Items.Add(ELEMENTO.NombreMedida);
+                    lstvPrecio.Items[contador - 1].SubItems.Add(ELEMENTO.Precio.ToString());
+
+                    if (contador % 2 == 0)
+                    {
+                        lstvPrecio.Items[contador - 1].BackColor = Color.DarkCyan;
+                    }
+                    contador = contador + 1;
                 }
-                contador = contador + 1;
             }
+
+
+            
         }
 
         private void lstvDatos_DoubleClick(object sender, EventArgs e)
@@ -169,10 +175,28 @@ namespace WindowsFormsApplication1
             Close();
         }
 
+        private void btnTodos_Click(object sender, EventArgs e)
+        {
+            ProductosEncontrados.Clear();
+            lstvDatos.Items.Clear();
+            int contador = 1;
+            foreach (clsProducto ELEMENTO in clsProducto.Listar_Todos())
+            {
+                ProductosEncontrados.Add(ELEMENTO);
+                lstvDatos.Items.Add(contador.ToString());
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.NombreProd);
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.MarcaProd);
+                lstvDatos.Items[contador - 1].SubItems.Add(ELEMENTO.DescripcionProd);
+
+                if (contador % 2 == 0)
+                {
+                    lstvDatos.Items[contador - 1].BackColor = Color.Khaki;
+                }
+                contador = contador + 1;
+            }
+        }
+
+
        
-
-
-
-
     }
 }

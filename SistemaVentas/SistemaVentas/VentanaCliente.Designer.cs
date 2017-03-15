@@ -120,11 +120,13 @@
             this.lstvDatos.FullRowSelect = true;
             this.lstvDatos.GridLines = true;
             this.lstvDatos.Location = new System.Drawing.Point(16, 128);
+            this.lstvDatos.MultiSelect = false;
             this.lstvDatos.Name = "lstvDatos";
             this.lstvDatos.Size = new System.Drawing.Size(563, 289);
             this.lstvDatos.TabIndex = 23;
             this.lstvDatos.UseCompatibleStateImageBehavior = false;
             this.lstvDatos.View = System.Windows.Forms.View.Details;
+            this.lstvDatos.DoubleClick += new System.EventHandler(this.lstvDatos_DoubleClick);
             // 
             // columnHeader1
             // 

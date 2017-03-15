@@ -38,6 +38,7 @@
             this.btnRegistrarVenta = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtPVenta = new System.Windows.Forms.TextBox();
             this.cmbMedida = new System.Windows.Forms.ComboBox();
             this.txtIgv = new System.Windows.Forms.TextBox();
             this.lblIGV = new System.Windows.Forms.Label();
@@ -67,7 +68,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtPVenta = new System.Windows.Forms.TextBox();
+            this.lblCodigoProducto = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -191,6 +192,14 @@
             this.groupBox4.TabIndex = 33;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Producto";
+            // 
+            // txtPVenta
+            // 
+            this.txtPVenta.Location = new System.Drawing.Point(362, 57);
+            this.txtPVenta.Name = "txtPVenta";
+            this.txtPVenta.ReadOnly = true;
+            this.txtPVenta.Size = new System.Drawing.Size(90, 21);
+            this.txtPVenta.TabIndex = 16;
             // 
             // cmbMedida
             // 
@@ -382,7 +391,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(339, 51);
+            this.groupBox1.Size = new System.Drawing.Size(314, 51);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo Documento";
@@ -465,19 +474,20 @@
             this.columnHeader5.Text = "V. de Venta";
             this.columnHeader5.Width = 102;
             // 
-            // txtPVenta
+            // lblCodigoProducto
             // 
-            this.txtPVenta.Location = new System.Drawing.Point(362, 57);
-            this.txtPVenta.Name = "txtPVenta";
-            this.txtPVenta.ReadOnly = true;
-            this.txtPVenta.Size = new System.Drawing.Size(90, 21);
-            this.txtPVenta.TabIndex = 16;
+            this.lblCodigoProducto.AutoSize = true;
+            this.lblCodigoProducto.Location = new System.Drawing.Point(464, 120);
+            this.lblCodigoProducto.Name = "lblCodigoProducto";
+            this.lblCodigoProducto.Size = new System.Drawing.Size(0, 13);
+            this.lblCodigoProducto.TabIndex = 40;
             // 
             // RegistroVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 550);
+            this.Controls.Add(this.lblCodigoProducto);
             this.Controls.Add(this.lstvDatos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEliminarItem);
@@ -499,6 +509,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -544,5 +555,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.TextBox txtPVenta;
+        private System.Windows.Forms.Label lblCodigoProducto;
     }
 }

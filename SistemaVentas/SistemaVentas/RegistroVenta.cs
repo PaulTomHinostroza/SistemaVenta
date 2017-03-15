@@ -70,6 +70,7 @@ namespace WindowsFormsApplication1
                 txtDescripcion.Text = x.ProductoSeleccionado.NombreProd;
                 IdProd = x.ProductoSeleccionado.IdProducto;
 
+
                 cmbMedida.Items.Clear();
                 foreach (clsPrecio ELEMENTO in clsPrecio.ListarPreciosProducto(x.ProductoSeleccionado.IdProducto))
                 {
@@ -146,7 +147,7 @@ namespace WindowsFormsApplication1
             }
             valorVenta = nudCantidad.Value * Convert.ToDecimal(txtPVenta.Text);
 
-            lstvDatos.Items.Add((nudCantidad.Value).ToString());
+            lstvDatos.Items.Add((nudCantidad.Value).ToString() + cmbMedida.SelectedItem);
             lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(txtDescripcion.Text);
             lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(txtMarca.Text);
             lstvDatos.Items[lstvDatos.Items.Count - 1].SubItems.Add(txtPVenta.Text);

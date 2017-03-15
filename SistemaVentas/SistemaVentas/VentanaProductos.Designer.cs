@@ -48,6 +48,7 @@
             this.lstvPrecio = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnTodos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -71,6 +72,7 @@
             this.lstvDatos.FullRowSelect = true;
             this.lstvDatos.GridLines = true;
             this.lstvDatos.Location = new System.Drawing.Point(16, 100);
+            this.lstvDatos.MultiSelect = false;
             this.lstvDatos.Name = "lstvDatos";
             this.lstvDatos.Size = new System.Drawing.Size(571, 245);
             this.lstvDatos.TabIndex = 31;
@@ -233,11 +235,22 @@
             this.columnHeader6.Text = "Precio";
             this.columnHeader6.Width = 135;
             // 
+            // btnTodos
+            // 
+            this.btnTodos.Location = new System.Drawing.Point(512, 405);
+            this.btnTodos.Name = "btnTodos";
+            this.btnTodos.Size = new System.Drawing.Size(75, 23);
+            this.btnTodos.TabIndex = 41;
+            this.btnTodos.Text = "Todos";
+            this.btnTodos.UseVisualStyleBackColor = true;
+            this.btnTodos.Click += new System.EventHandler(this.btnTodos_Click);
+            // 
             // VentanaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 602);
+            this.Controls.Add(this.btnTodos);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lstvPrecio);
             this.Controls.Add(this.button2);
@@ -283,6 +296,7 @@
         private System.Windows.Forms.ListView lstvPrecio;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.Button btnTodos;
 
     }
 }
