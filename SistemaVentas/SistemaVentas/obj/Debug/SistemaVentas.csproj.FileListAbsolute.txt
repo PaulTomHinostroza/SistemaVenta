@@ -72,3 +72,4 @@ C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\
 C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.VentanaAlmacen.resources
 C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.ReporteCliente.resources
 C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.RegistroVenta.resources
+C:\Users\PC\Documents\GitHub\SistemaVenta\SistemaVentas\SistemaVentas\obj\Debug\WindowsFormsApplication1.LoginEmpleado.resources

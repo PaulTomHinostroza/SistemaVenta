@@ -16,5 +16,19 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            clsEmpleado MiUsuario = clsEmpleado.Validar(txtUsuario.Text, txtContraseña.Text);
+            if (MiUsuario == null)
+            {
+                MessageBox.Show("El usuario y/o clave es incorrecto.");
+            }
+            else
+            {
+                mdlVariables.MiUsuarioConectado = MiUsuario;
+                Close();
+            }
+        }
     }
 }

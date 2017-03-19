@@ -134,5 +134,26 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VentanaPrincipal_Load(object sender, EventArgs e)
+        {
+            //lblEmpleadoConectado.Text = mdlVariables.MiUsuarioConectado.NombresEmp;
+            //if (mdlVariables.MiUsuarioConectado.Tipo == 'A')
+            //{
+            //    lblTipoEmpleado.Text = "ADMINISTRADOR";
+            //}
+            //else
+            //{
+                
+            //    lblTipoEmpleado.Text = "EMPLEADO";
+                //ventasPorFechaToolStripMenuItem.Visible = false;
+                //consultarInventarioToolStripMenuItem.Visible = false;
+            }
+        }
     }
 }

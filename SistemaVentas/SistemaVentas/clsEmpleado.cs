@@ -13,6 +13,7 @@ namespace WindowsFormsApplication1
         private clsCargo _Cargo;
         private int _CargoL;
 
+        private char TipoEmp { get; set; }
         
         private string _NombresEmp;
         private string _ApellidosEmp;
@@ -46,6 +47,16 @@ namespace WindowsFormsApplication1
             FechaNacEmp = parFechaNacimiento;
             EmailEmp = parEmail;
             IdEmpleado = parIdEmpleado;
+        }
+
+        public clsEmpleado(string parNombres, string parDNI,char parTipoEmp   )
+        {
+            
+            NombresEmp = parNombres;            
+            DNIEmp = parDNI;
+            TipoEmp=parTipoEmp;
+                               
+            
         }
 
         public int IdEmpleado
@@ -256,5 +267,29 @@ namespace WindowsFormsApplication1
             cmd.ExecuteNonQuery();
             conexion.Close();
         }
+        public static clsEmpleado Validar(string parNombres,
+                                        string parDNI)
+        {
+            clsEmpleado UsuarioRetornado = null;
+            SqlConnection conexion = new SqlConnection(mdlVariables.CadenaDeConexion);
+            SqlCommand cmd = new SqlCommand("usp_Empleado_Login", conexion);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@parElUsuario", parNombres);
+            cmd.Parameters.AddWithValue("@parLaClave", parDNI);
+            conexion.Open();
+            SqlDataReader contenedor;
+            contenedor = cmd.ExecuteReader();
+            while (contenedor.Read() == true)
+            {
+                UsuarioRetornado = new clsEmpleado(contenedor["Nombres"].ToString(),
+                                                    contenedor["DNI"].ToString(),                                            
+                                                     Convert.ToChar(contenedor["Tipo"].ToString()));
+            }
+            conexion.Close();
+            return UsuarioRetornado;
+        }
+
+
+
     }
 }

@@ -49,6 +49,10 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Empleado = new System.Windows.Forms.RadioButton();
+            this.rbtAdministrador = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -236,12 +240,46 @@
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Empleado);
+            this.groupBox1.Controls.Add(this.rbtAdministrador);
+            this.groupBox1.Location = new System.Drawing.Point(340, 161);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tipo Empleado";
+            // 
+            // Empleado
+            // 
+            this.Empleado.AutoSize = true;
+            this.Empleado.Location = new System.Drawing.Point(107, 33);
+            this.Empleado.Name = "Empleado";
+            this.Empleado.Size = new System.Drawing.Size(71, 17);
+            this.Empleado.TabIndex = 23;
+            this.Empleado.TabStop = true;
+            this.Empleado.Text = "Femenino";
+            this.Empleado.UseVisualStyleBackColor = true;
+            // 
+            // rbtAdministrador
+            // 
+            this.rbtAdministrador.AutoSize = true;
+            this.rbtAdministrador.Location = new System.Drawing.Point(16, 33);
+            this.rbtAdministrador.Name = "rbtAdministrador";
+            this.rbtAdministrador.Size = new System.Drawing.Size(73, 17);
+            this.rbtAdministrador.TabIndex = 22;
+            this.rbtAdministrador.TabStop = true;
+            this.rbtAdministrador.Text = "Masculino";
+            this.rbtAdministrador.UseVisualStyleBackColor = true;
+            // 
             // RegistroEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(536, 421);
+            this.ClientSize = new System.Drawing.Size(557, 421);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -267,6 +305,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Empleados";
             this.Load += new System.EventHandler(this.RegistroEmpleado_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,6 +335,9 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton Empleado;
+        private System.Windows.Forms.RadioButton rbtAdministrador;
     }
 }
 

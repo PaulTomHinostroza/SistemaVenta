@@ -8,6 +8,11 @@ namespace WindowsFormsApplication1
 {
     public class mdlVariables
     {
-        public static string CadenaDeConexion = "Server=ADMIN\\SQLEXPRESS;Database=CentroComercial;USER=sa;PWD=continental"; 
+        
+        public static string CadenaDeConexion = "Server=ADMIN\\SQLEXPRESS;Database=CentroComercial;USER=sa;PWD=continental";
+       
+        public static clsEmpleado MiUsuarioConectado = null;
     }
+
+
 }
